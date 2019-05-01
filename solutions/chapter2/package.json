@@ -1,0 +1,15 @@
+{
+  "name": "chapter1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "Christian Bromann <christian@saucelabs.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webdriverio": "^5.8.0"
+  }
+}
