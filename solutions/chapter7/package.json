@@ -1,0 +1,28 @@
+{
+  "name": "chapter1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio wdio.local.conf.js",
+    "test:sauce": "wdio wdio.sauce.conf.js"
+  },
+  "keywords": [],
+  "author": "Christian Bromann <christian@saucelabs.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^5.7.11",
+    "@wdio/applitools-service": "^5.8.0",
+    "@wdio/cli": "^5.8.0",
+    "@wdio/local-runner": "^5.8.0",
+    "@wdio/mocha-framework": "^5.8.0",
+    "@wdio/sauce-service": "^5.8.0",
+    "@wdio/spec-reporter": "^5.8.0",
+    "@wdio/sync": "^5.8.0",
+    "allure-commandline": "^2.9.0",
+    "chai": "^4.2.0",
+    "chromedriver": "^74.0.0",
+    "wdio-chromedriver-service": "^5.0.1",
+    "webdriverio": "^5.8.0"
+  }
+}

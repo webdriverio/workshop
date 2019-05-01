@@ -20,7 +20,8 @@ If you don't have this installed go to [chapter 1](./chapter1.md) where we walk 
 4. [Use of Reporter and Services](./chapter4.md)
 5. [Sauce Labs Integration](./chapter5.md)
 6. [Page Objects](./chapter6.md)
-7. [Go Pro](./chapter7.md)
+7. [Visual Regression Testing](./chapter7.md)
+8. [Go Pro](./chapter8.md)
 
 ## Disclaimer
 
