@@ -84,4 +84,4 @@ describe('My Vue.js Example Application', () => {
 })
 ```
 
-__Note:__ as you use the WDIO testrunner, you don't need to initialise and close the testsession anymore.
+__Note:__ as you use the WDIO testrunner, you don't need to initialise and close the testsession anymore. Also make sure you still have Chromedriver running in a parallel terminal window.

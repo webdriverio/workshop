@@ -1,3 +1,5 @@
+const allure = require('allure-commandline')
+
 exports.config = {
     //
     // ====================
@@ -7,6 +9,7 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
+    path: '/',
     //
     // ==================
     // Specify Test Files
@@ -51,12 +54,13 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
+        browserName: 'chrome'
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }],
+    outputDir: './logs',
     //
     // ===================
     // Test Configurations
@@ -119,7 +123,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+    reporters: [
+      'spec',
+      ['allure', {
+        outputDir: 'allure-results'
+      }]
+    ],
+    services: ['chromedriver'],
+    chromeDriverLogs: './logs',
 
     //
     // Options to be passed to Mocha.
@@ -238,8 +249,20 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: function(exitCode, config, capabilities, results) {
+      const generation = allure(['generate', 'allure-results'])
+      return new Promise((resolve, reject) => {
+        const generationTimeout = setTimeout(
+          () => reject(new Error('Could not generate Allure report')),
+          5000)
+
+        generation.on('exit', function(exitCode) {
+          clearTimeout(generationTimeout)
+          console.log('Allure report successfully generated')
+          resolve()
+        })
+      })
+    }
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session
