@@ -84,4 +84,10 @@ describe('My Vue.js Example Application', () => {
 })
 ```
 
+After you've ported the tests you can run it using the wdio testrunner by calling:
+
+```sh
+$ ./node_modules/.bin/wdio wdio.conf.js
+```
+
 __Note:__ as you use the WDIO testrunner, you don't need to initialise and close the testsession anymore. Also make sure you still have Chromedriver running in a parallel terminal window.
