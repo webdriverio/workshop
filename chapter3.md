@@ -8,7 +8,7 @@ If you have finished the last chapter successfully, good job 👍! We are now re
 3. Port the code in your `test.js` file into an actual test
 4. Make your code synchronous (no `async/await` anymore)
 5. Add an assertion library to make an assertion in the test
-6. Create a simple to run NPM script
+6. Create a simple entry in package.json to run test through NPM script
 
 The WDIO testrunner allows you to scale up your automation tests. It takes on a lot of work that you would need to setup up manually. The features and advantages of it are the following:
 
