@@ -5,7 +5,7 @@ If you have finished the last chapter successfully, good job 👍! We are now re
 
 1. Initiate a `wdio.conf.js` file using the WDIO setup wizard
 2. Create a test directory where we put all our e2e test files
-3. Port the in your `test.js` file into an actual test
+3. Port the code in your `test.js` file into an actual test
 4. Make your code synchronous (no `async/await` anymore)
 5. Add an assertion library to make an assertion in the test
 6. Create a simple to run NPM script
