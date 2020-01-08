@@ -9,6 +9,8 @@ In order to go through the course the following software is required to be insta
 
 - Node.js (v10 or higher)
 - NPM (v6 or higher)
+- Python (2.7 or higher)
+- An updated browser (e.g. Chrome, Firefox etc.)
 
 If you don't have this installed go to [chapter 1](./chapter1.md) where we walk through all install steps.
 
