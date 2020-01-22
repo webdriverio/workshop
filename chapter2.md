@@ -68,3 +68,42 @@ $ node test.js
 This script now should open and close the browser again. You can now work on the assignment to create an automation script that does the steps outlined at the top of this chapter. You find all commands that are available in WebdriverIO in the [API docs](https://webdriver.io/docs/api.html).
 
 __Note:__ All code examples in the API docs assume your are running the WDIO testrunner using synchronous commands. This exercise is running WebdriverIO as standalone version. Synchronous commands are not supported here. Ensure that call every command with the `await` operator so that [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are being resolved properly. You can read more about different modes and setup types of WebdriverIO [in the docs](https://webdriver.io/docs/setuptypes.html).
+
+## Extra
+
+WebdriverIO allows to automate the browser using a different protocol called [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/). You can switch to that by installing the [`devtools`](https://www.npmjs.com/package/devtools) NPM package:
+
+```sh
+$ npm i devtools
+```
+
+And setting the option `automationProtocol` to `'devtools'`:
+
+```js
+const browser = await remote({
+  automationProtocol: 'devtools',
+  capabilities: {
+    browserName: 'chrome'
+  }
+})
+```
+
+You can then interact with the browser using the [WebdriverIO API](https://webdriver.io/docs/api.html) as well as the [Puppeteer](https://pptr.dev/) framework.
+
+__Task:__ run WebdriverIO using the `devtools` automation protocol and pre-populate the local storage with items so that if you open the page it should have already have 3 ToDos stored. The local storage key for these items is `todos-vuejs` and should contain a list like:
+
+```json
+[{
+  "id": 1,
+  "title": "Foo",
+  "completed": false
+}, {
+  "id": 2,
+  "title": "Bar",
+  "completed": false
+}, {
+  "id": 3,
+  "title": "Loo",
+  "completed": false
+}]
+```
