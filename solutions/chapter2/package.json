@@ -10,6 +10,6 @@
   "author": "Christian Bromann <christian@saucelabs.com>",
   "license": "MIT",
   "devDependencies": {
-    "webdriverio": "^5.8.0"
+    "webdriverio": "^5.18.6"
   }
 }
