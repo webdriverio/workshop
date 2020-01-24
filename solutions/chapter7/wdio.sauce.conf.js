@@ -35,7 +35,5 @@ exports.config = Object.assign(config, {
     ...sauceOptions
   }],
 
-  services: ['sauce', 'applitools'],
-
-  applitoolsKey: 'd8n4101DTLKs107jFm0TLBigOih105dIvQPE97Fxdz102I37fAxk110'
+  services: ['sauce']
 })
