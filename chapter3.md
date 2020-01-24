@@ -37,10 +37,6 @@ You are being asked a bunch of questions that you can answer as follows:
 
 There is only one option here: local. This means that your tests are run on your machine. There different kinds of runner planned that e.g. allow you to run tests in the cloud using AWS lambda functions.
 
-> Shall I install the runner plugin for you?
-
-Answer with `yes`. Also do this with all the following questions like that. It ensure that all necessary plugins are noted as dependency in your `package.json`.
-
 > Where is your automation backend located?
 
 As we are getting started we want to run our test on your local machine. We will integrate SauceLabs in a later chapter.
@@ -64,10 +60,6 @@ Select `spec` reporter here. It is the common most used reporter.
 > Do you want to add a service to your test setup?
 
 Hit enter without any selection as we want to add service integrations later on.
-
-> Level of logging verbosity
-
-Pick `trace` as we want to get as much logs as possible.
 
 > What is the base url?
 
