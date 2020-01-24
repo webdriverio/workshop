@@ -69,7 +69,13 @@ This script now should open and close the browser again. You can now work on the
 
 __Note:__ All code examples in the API docs assume your are running the WDIO testrunner using synchronous commands. This exercise is running WebdriverIO as standalone version. Synchronous commands are not supported here. Ensure that call every command with the `await` operator so that [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are being resolved properly. You can read more about different modes and setup types of WebdriverIO [in the docs](https://webdriver.io/docs/setuptypes.html).
 
-## Extra
+## Extra #1
+
+Sending many WebDriver requests can be expensive especially if you use a cloud vendor like Sauce Labs where you have to connect with a server in the cloud. Single WebDriver calls can have latencies of multiple hundreds of milliseconds. In order to keep the test execution time low, it is recommended to keep the number of WebDriver requests small.
+
+To speed up the test with our current example try to send all 3 Todo items with one single WebDriver call.
+
+## Extra #2
 
 WebdriverIO allows to automate the browser using a different protocol called [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/). You can switch to that by installing the [`devtools`](https://www.npmjs.com/package/devtools) NPM package:
 
