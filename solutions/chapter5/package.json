@@ -19,6 +19,7 @@
     "allure-commandline": "^2.9.0",
     "chai": "^4.2.0",
     "chromedriver": "^79.0.0",
+    "fs-extra": "^8.1.0",
     "wdio-chromedriver-service": "^5.0.1",
     "webdriverio": "^5.18.6"
   }

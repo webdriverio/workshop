@@ -20,7 +20,7 @@
     "@wdio/sync": "^5.18.6",
     "allure-commandline": "^2.9.0",
     "chai": "^4.2.0",
-    "chromedriver": "^74.0.0",
+    "chromedriver": "^79.0.0",
     "wdio-chromedriver-service": "^5.0.1",
     "webdriverio": "^5.18.6"
   }
