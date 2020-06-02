@@ -1,7 +1,7 @@
 const BaseReporter = require('@wdio/reporter').default
 
 module.exports = class CustomReporter extends BaseReporter {
-  constructor(options,a, b) {
+  constructor(options) {
     /*
      * make reporter to write to the output stream by default
      */
