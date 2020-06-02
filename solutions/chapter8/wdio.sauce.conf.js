@@ -30,12 +30,15 @@ exports.config = Object.assign(config, {
     ...sauceOptions
   }, {
     browserName: 'safari',
-    platformName: 'macOS 10.13',
+    platformName: 'macOS 10.15',
     browserVersion: 'latest',
     ...sauceOptions
   }],
 
-  services: ['sauce', 'applitools'],
-
-  applitoolsKey: 'd8n4101DTLKs107jFm0TLBigOih105dIvQPE97Fxdz102I37fAxk110'
+  services: [
+    'sauce',
+    ['applitools', {
+      key: 'd8n4101DTLKs107jFm0TLBigOih105dIvQPE97Fxdz102I37fAxk110'
+    }]
+  ]
 })

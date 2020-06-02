@@ -23,7 +23,7 @@ exports.config = Object.assign(config, {
     ...sauceOptions
   }, {
     browserName: 'safari',
-    platformName: 'macOS 10.13',
+    platformName: 'macOS 10.15',
     browserVersion: 'latest',
     ...sauceOptions
   }],

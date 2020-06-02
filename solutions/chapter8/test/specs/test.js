@@ -17,7 +17,7 @@ describe('My Vue.js Example Application', () => {
     // to see that ToDo was completed
     browser.pause(2000)
 
-    expect(TodoApp.todoCount).to.be.equal('2 items left')
+    expect(TodoApp.todoCount).toBe('2 items left')
 
     // take visual regression snapshot
     browser.takeSnapshot('one checked item')
@@ -25,7 +25,7 @@ describe('My Vue.js Example Application', () => {
 
   it('should allow to clear completed todos', () => {
     TodoApp.clear()
-    expect(TodoApp.todos).to.have.lengthOf(2)
+    expect(TodoApp.todos.length).toBe(2)
   })
 
   it('should allow to filter todos', () => {
@@ -33,14 +33,14 @@ describe('My Vue.js Example Application', () => {
 
     TodoApp.filter('active')
     const activeTodos = TodoApp.todos
-    expect(activeTodos).to.have.lengthOf(1)
-    expect(activeTodos[0].text).to.be.equal('ToDo #3')
+    expect(activeTodos.length).toBe(1)
+    expect(activeTodos[0].elem).toHaveText('ToDo #3')
     browser.takeSnapshot('active filter enabled')
 
     TodoApp.filter('completed')
     const completedTodos = TodoApp.todos
-    expect(completedTodos).to.have.lengthOf(1)
-    expect(completedTodos[0].text).to.be.equal('ToDo #1')
+    expect(completedTodos.length).toBe(1)
+    expect(completedTodos[0].elem).toHaveText('ToDo #1')
     browser.takeSnapshot('complete filter enabled')
   })
 })

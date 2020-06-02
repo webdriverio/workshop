@@ -44,6 +44,9 @@ const setDomainLocalStorage = async (browser, url, values) => {
     return (await browser.$$('.todo')).length > 0
   }, 3000, 'No items were propagated')
 
+  // to see that ToDo were created
+  await browser.pause(2000)
+
   const todoCount = await browser.$('.todo-count')
   const todoCountText = await todoCount.getText()
   console.log(`\n\nToDo count: ${todoCountText}\n\n`);

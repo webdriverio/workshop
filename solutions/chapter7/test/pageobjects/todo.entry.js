@@ -11,10 +11,6 @@ exports.TodoEntry = class TodoEntry {
     return this.elem.$('.toggle')
   }
 
-  get text () {
-    return this.elem.getText().trim()
-  }
-
   complete () {
     return this.toggle.click()
   }
