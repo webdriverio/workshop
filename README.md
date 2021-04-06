@@ -16,16 +16,16 @@ If you don't have this installed go to [chapter 1](./chapter1.md) where we walk 
 
 ## Chapters
 
-1. [Setup Environment](./chapter1.md)
-1. [Writing an automation script using Standalone Mode](./chapter2.md)
-1. [WDIO Testrunner](./chapter3.md)
-1. [Use of Reporter and Services](./chapter4.md)
-1. [Performance Testing](./chapter5.md)
-1. [Custom Reporters and Services](./chapter6.md)
-1. [Sauce Labs Integration](./chapter7.md)
-1. [Page Objects](./chapter8.md)
-1. [Visual Regression Testing](./chapter9.md)
-1. [Go Pro](./chapter10.md)
+1. [Setup Environment](./chapter_01.md)
+1. [Writing an automation script using Standalone Mode](./chapter_02.md)
+1. [WDIO Testrunner](./chapter_03.md)
+1. [Use of Reporter and Services](./chapter_04.md)
+1. [Performance Testing](./chapter_05.md)
+1. [Custom Reporters and Services](./chapter_06.md)
+1. [Sauce Labs Integration](./chapter_07.md)
+1. [Page Objects](./chapter_08.md)
+1. [Visual Regression Testing](./chapter_09.md)
+1. [Go Pro](./chapter_10.md)
 
 ## Disclaimer
 
