@@ -12,8 +12,6 @@ After getting our basic setup for local and cloud based testing ready we can now
 A full documentation on how page objects can be written with WebdriverIO can be found in the [docs](https://webdriver.io/docs/pageobjects.html). The goal of this excercise is to make your initial test look as follows:
 
 ```js
-const { expect } = require('chai')
-
 const TodoApp = require('../pageobjects/main.page')
 
 describe('My Vue.js Example Application', () => {
@@ -31,7 +29,7 @@ describe('My Vue.js Example Application', () => {
     // to see that ToDo was completed
     browser.pause(2000)
 
-    expect(TodoApp.todoCount).to.be.equal('2 items left')
+    expect(TodoApp.todoCount).toBe('2 items left')
   })
 
   // here your new tests (see point 3)
