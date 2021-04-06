@@ -16,7 +16,12 @@ exports.config = Object.assign(config, {
     // excludeDriverLogs: ['bugreport', 'server'],
   }],
 
-  services: ['chromedriver'],
+  services: [
+    'chromedriver',
+    ['applitools', {
+      key: process.env.APPLITOOLS_KEY
+    }]
+  ],
   chromeDriverLogs: './logs',
 
   /**

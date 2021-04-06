@@ -1,5 +1,3 @@
-const { expect } = require('chai')
-
 const { TodoApp } = require('../pageobjects/main.page')
 
 describe('My Vue.js Example Application', () => {
