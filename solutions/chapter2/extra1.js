@@ -1,10 +1,9 @@
 const { remote } = require('webdriverio')
 
-let browser;
+let browser
 
-(async () => {
-  const browser = await remote({
-    hostname: 'localhost',
+;(async () => {
+  browser = await remote({
     capabilities: {
       browserName: 'chrome'
     }
@@ -15,10 +14,11 @@ let browser;
   const newTodoInput = await browser.$('.new-todo')
   await newTodoInput.setValue([
     'ToDo #1',
-    'Enter',
+    '\n',
     'Todo #2',
-    'Enter',
-    'Todo #3'
+    '\n',
+    'Todo #3',
+    '\n'
   ])
 
   // to see that all ToDos were entered

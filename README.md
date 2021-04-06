@@ -1,7 +1,7 @@
 WebdriverIO Hands On
 ====================
 
-This little course will help you to get up and running with WebdriverIO. It will walk you through different steps that will explain how to setup and use the project successfully.
+This little course will help you to get up and running with WebdriverIO v7. It will walk you through different steps that will explain how to setup and use the project successfully.
 
 ## Prerequisites
 

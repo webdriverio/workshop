@@ -1,10 +1,9 @@
 const { remote } = require('webdriverio')
 
-let browser;
+let browser
 
-(async () => {
-  const browser = await remote({
-    hostname: 'localhost',
+;(async () => {
+  browser = await remote({
     capabilities: {
       browserName: 'chrome'
     }

@@ -53,12 +53,6 @@ let browser;
 });
 ```
 
-Before you run the script, make sure that you have the browser driver running in a different terminal window:
-
-```sh
-chromedriver --url-base=wd/hub --port=4444 --verbose
-```
-
 You should be able to run the script now by calling:
 
 ```sh
@@ -113,3 +107,15 @@ __Task:__ run WebdriverIO using the `devtools` automation protocol and pre-popul
   "completed": false
 }]
 ```
+
+## Extra #3
+
+In case your application is using a REST API you can also leverage WebdriverIO's [mock capabilities](https://webdriver.io/docs/api/browser/mock). This avoids switching between Protractor and WebDriver code and just makes you use the native WebdriverIO interface.
+
+__Task:__ modify your __Extra 2__ solution to use a TodoMVC app with a REST API backend, e.g. [https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos](https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos), and simplify your script to make use of the [mock](https://webdriver.io/docs/api/browser/mock) command.
+
+Note:
+- the app url is now `https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos`
+- the todobackend app uses a slightly outdated TodoMVC app, adjust your element selectors from `$$('.todo')` -> `$$('#todo-list li')` and `$('.todo-count')` to `$('#todo-count')`
+
+If everything is working you should see the app loading ToDos defined in your tests rather than accessing the API.

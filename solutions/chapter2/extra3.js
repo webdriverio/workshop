@@ -1,20 +1,5 @@
 const { remote } = require('webdriverio')
 
-const setDomainLocalStorage = async (browser, url, values) => {
-  const page = await browser.newPage()
-  await page.setRequestInterception(true)
-  page.on('request', r => r.respond({
-    status: 200,
-    contentType: 'text/plain',
-    body: 'tweak me.',
-  }))
-  await page.goto(url)
-  await page.evaluate(values => {
-    localStorage.setItem('todos-vuejs', JSON.stringify(values))
-  }, values)
-  await page.close()
-}
-
 let browser
 ;(async () => {
   browser = await remote({
@@ -24,7 +9,6 @@ let browser
     }
   })
 
-  const puppeteerBrowser = await browser.getPuppeteer()
   const values = [{
     id: 1,
     title: 'Foo',
@@ -38,17 +22,20 @@ let browser
     title: 'Loo',
     completed: false
   }]
-  await setDomainLocalStorage(puppeteerBrowser, 'https://todomvc.com/examples/vue/', values)
-  await browser.url('https://todomvc.com/examples/vue/')
+  const mock = await browser.mock('https://todo-backend-node-koa.herokuapp.com/todos', {
+    method: 'get'
+  })
+  mock.respond(values)
 
+  await browser.url('https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos')
   await browser.waitUntil(async () => {
-    return (await browser.$$('.todo')).length > 0
+    return (await browser.$$('#todo-list li')).length > 0
   }, 3000, 'No items were propagated')
 
   // to see that ToDo were created
   await browser.pause(2000)
 
-  const todoCount = await browser.$('.todo-count')
+  const todoCount = await browser.$('#todo-count')
   const todoCountText = await todoCount.getText()
   console.log(`\n\nToDo count: ${todoCountText}\n\n`);
 
