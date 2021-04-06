@@ -1,5 +1,3 @@
-const { expect } = require('chai')
-
 describe('My Vue.js Example Application', () => {
   it('should be able to complete ToDos', () => {
     browser.url('http://todomvc.com/examples/vue/')
@@ -26,6 +24,6 @@ describe('My Vue.js Example Application', () => {
     browser.pause(2000)
 
     const todoCount = browser.$('.todo-count')
-    expect(todoCountText).toHaveText('2 items left')
+    expect(todoCount).toHaveText('2 items left')
   })
 })

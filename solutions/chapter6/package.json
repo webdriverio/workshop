@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.local.conf.js",
-    "test:sauce": "wdio wdio.sauce.conf.js"
+    "test": "wdio wdio.conf.js"
   },
   "keywords": [],
   "author": "Christian Bromann <christian@saucelabs.com>",

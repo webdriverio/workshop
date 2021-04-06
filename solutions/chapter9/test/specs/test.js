@@ -1,3 +1,5 @@
+const { expect } = require('chai')
+
 const { TodoApp } = require('../pageobjects/main.page')
 
 describe('My Vue.js Example Application', () => {
@@ -16,6 +18,9 @@ describe('My Vue.js Example Application', () => {
     browser.pause(2000)
 
     expect(TodoApp.todoCount).toBe('2 items left')
+
+    // take visual regression snapshot
+    browser.takeSnapshot('one checked item')
   })
 
   it('should allow to clear completed todos', () => {
@@ -30,10 +35,12 @@ describe('My Vue.js Example Application', () => {
     const activeTodos = TodoApp.todos
     expect(activeTodos.length).toBe(1)
     expect(activeTodos[0].elem).toHaveText('ToDo #3')
+    browser.takeSnapshot('active filter enabled')
 
     TodoApp.filter('completed')
     const completedTodos = TodoApp.todos
     expect(completedTodos.length).toBe(1)
     expect(completedTodos[0].elem).toHaveText('ToDo #1')
+    browser.takeSnapshot('complete filter enabled')
   })
 })

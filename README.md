@@ -7,8 +7,8 @@ This little course will help you to get up and running with WebdriverIO. It will
 
 In order to go through the course the following software is required to be installed on your system:
 
-- Node.js (v10 or higher)
-- NPM (v6 or higher)
+- Node.js (v14 or higher)
+- NPM (v7 or higher)
 - Python (2.7 or higher)
 - An updated browser (e.g. Chrome, Firefox etc.)
 
@@ -17,14 +17,15 @@ If you don't have this installed go to [chapter 1](./chapter1.md) where we walk 
 ## Chapters
 
 1. [Setup Environment](./chapter1.md)
-2. [Writing an automation script using Standalone Mode](./chapter2.md)
-3. [WDIO Testrunner](./chapter3.md)
-4. [Use of Reporter and Services](./chapter4.md)
-5. [Custom Reporters and Services](./chapter5.md)
-5. [Sauce Labs Integration](./chapter6.md)
-6. [Page Objects](./chapter7.md)
-7. [Visual Regression Testing](./chapter8.md)
-8. [Go Pro](./chapter9.md)
+1. [Writing an automation script using Standalone Mode](./chapter2.md)
+1. [WDIO Testrunner](./chapter3.md)
+1. [Use of Reporter and Services](./chapter4.md)
+1. [Performance Testing](./chapter5.md)
+1. [Custom Reporters and Services](./chapter6.md)
+1. [Sauce Labs Integration](./chapter7.md)
+1. [Page Objects](./chapter8.md)
+1. [Visual Regression Testing](./chapter9.md)
+1. [Go Pro](./chapter10.md)
 
 ## Disclaimer
 
