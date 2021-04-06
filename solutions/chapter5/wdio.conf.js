@@ -124,7 +124,7 @@ exports.config = {
         outputDir: 'allure-results'
       }]
     ],
-    services: ['chromedriver'],
+    services: ['chromedriver', 'devtools'],
     chromeDriverLogs: './logs',
 
     //
