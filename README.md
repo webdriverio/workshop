@@ -12,7 +12,7 @@ In order to go through the course the following software is required to be insta
 - Python (2.7 or higher)
 - An updated browser (e.g. Chrome, Firefox etc.)
 
-If you don't have this installed go to [chapter 1](./chapter1.md) where we walk through all install steps.
+If you don't have this installed go to [chapter 1](./chapter_01.md) where we walk through all install steps.
 
 ## Chapters
 
