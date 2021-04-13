@@ -24,6 +24,6 @@ describe('My Vue.js Example Application', () => {
     browser.pause(2000)
 
     const todoCount = browser.$('.todo-count')
-    expect(todoCount).toHaveText('2 items left')
+    expect(todoCount).toHaveText('2 items left', { trim: true })
   })
 })

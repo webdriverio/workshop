@@ -35,5 +35,10 @@ exports.config = Object.assign(config, {
     ...sauceOptions
   }],
 
-  services: ['sauce']
+  services: [
+    ['sauce', {
+      sauceConnect: true,
+      tunnelIdentifier: 'my Sauce tunnel'
+    }]
+  ]
 })
