@@ -11,6 +11,7 @@ Now as we have a pretty decent functional test suite, let's scale this up and ru
 6. Make sure all your tests run in the same build
 7. __Bonus:__ run tests in the EU datacenter
 8. __Bonus:__ run tests through [Sauce Connect Proxy](https://wiki.saucelabs.com/display/DOCS/Sauce+Connect+Proxy)
+9. __Bonus:__ add another workflow to your GitHub Action that runs tests on Sauce Labs
 
 If you want to scale up your tests and run them with different configurations using different browser you will realise that it becomes difficult to maintain a set of browser environments with their drivers. Here is where Sauce Labs comes in. Sauce Labs is the world largest grid of browser and mobile environments. With WebdriverIO you only need to provide the username and access key information in your config file to get up and running and be able to run your tests in over 1000 different environments.
 
