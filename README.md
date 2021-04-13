@@ -32,7 +32,7 @@ If you don't have this installed go to [chapter 1](./chapter_01.md) where we wal
 
 ## Disclaimer
 
-All code and command examples assume that you are using a MacBook. Usually they should also work on a PowerShell on Windows. For anyone who has problems running certain things with Windows please create an issue or provide a PR (see below).
+All code and command examples assume that you are using a MacBook. Usually they should also work on Linux or a PowerShell on Windows. For anyone who has problems running certain things with Windows, please create an issue or provide a PR (see below).
 
 ## Contributing
 
