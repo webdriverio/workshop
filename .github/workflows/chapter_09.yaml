@@ -1,4 +1,4 @@
-name: Chapter 08 - CI/CD Integration
+name: Chapter 09 - Sauce Labs Integration
 
 on: [push, pull_request]
 
