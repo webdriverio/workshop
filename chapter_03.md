@@ -28,14 +28,10 @@ $ npm i --save-dev @wdio/cli
 This will install the CLI interface that you can use to run your tests with. Instead of running the `node` command directly on a file you are now using the new installed cli tool called `wdio` to run your tests. If you start with `wdio` in a new project, it makes sense to run the WDIO setup wizard to generate a config file. For that run:
 
 ```sh
-$ ./node_modules/.bin/wdio config
+$ npx wdio config
 ```
 
 You are being asked a bunch of questions that you can answer as follows:
-
-> Where should your tests be launched?
-
-There is only one option here: local. This means that your tests are run on your machine. There different kinds of runner planned that e.g. allow you to run tests in the cloud using AWS lambda functions.
 
 > Where is your automation backend located?
 
@@ -49,9 +45,17 @@ You can decide any framework you want here as their way of working is similar. H
 
 Select `synchronous` here. If you know how to handle promises you can also choose `asynchronous`, however it comes with some disadvantages (e.g. chaining commands) that make look more verbose.
 
+> Are you using a compiler?
+
+If you prefer to write your tests with TypeScript or Babel you can pick one of the compilers here. This may require additional setup steps (e.g. creating a compiler config file). You can also just continue without a compiler, continue with "No!".
+
 > Where are your test specs located?
 
 Just hit enter and use the suggested location.
+
+> Do you want WebdriverIO to autogenerate some test files?
+
+WebdriverIO generates some example test files, for our workshop these aren't needed, so continue with `n`.
 
 > Which reporter do you want to use?
 
@@ -79,7 +83,7 @@ describe('My Vue.js Example Application', () => {
 After you've ported the tests you can run it using the wdio testrunner by calling:
 
 ```sh
-$ ./node_modules/.bin/wdio wdio.conf.js
+$ npx wdio
 ```
 
 __Note:__ as you use the WDIO testrunner, you don't need to initialise and close the testsession anymore. Also make sure you still have Chromedriver running in a parallel terminal window.

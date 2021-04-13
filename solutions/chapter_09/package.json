@@ -1,5 +1,5 @@
 {
-  "name": "chapter9",
+  "name": "chapter8",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,6 @@
   "license": "MIT",
   "devDependencies": {
     "@wdio/allure-reporter": "^7.3.0",
-    "@wdio/applitools-service": "^7.3.0",
     "@wdio/cli": "^7.3.0",
     "@wdio/local-runner": "^7.3.0",
     "@wdio/mocha-framework": "^7.3.0",

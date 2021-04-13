@@ -11,7 +11,7 @@ WebdriverIO allows you to test the performance of your frontend application usin
 - add an assertion for the `speedIndex` metric
 - modify the test so we can run it locally as well as on Sauce Labs
 
-## Extra #3
+## Extra #1
 
 Capturing the performance of a browser requires access to native browser APIs. Currently only Chrome allows for such introspection. As browser APIs aren't supported yet by cloud vendors such as Sauce Labs we need to workaround this problem by using [Sauce Labs WebDriver extension](https://wiki.saucelabs.com/display/DOCS/Measure+Page+Load+Performance+Using+Test+Automation) that enable performance testing in the cloud.
 

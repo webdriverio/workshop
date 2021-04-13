@@ -7,12 +7,6 @@ const sauceOptions = {
   }
 }
 
-const chromeOptions = {
-  'goog:chromeOptions': {
-    'w3c': true
-  }
-}
-
 exports.config = Object.assign(config, {
   user: process.env.SAUCE_USERNAME,
   key: process.env.SAUCE_ACCESS_KEY,
@@ -21,8 +15,7 @@ exports.config = Object.assign(config, {
     browserName: 'chrome',
     platformName: 'Windows 10',
     browserVersion: 'latest',
-    ...sauceOptions,
-    ...chromeOptions
+    ...sauceOptions
   }, {
     browserName: 'firefox',
     platformName: 'Windows 10',
@@ -35,10 +28,5 @@ exports.config = Object.assign(config, {
     ...sauceOptions
   }],
 
-  services: [
-    'sauce',
-    ['applitools', {
-      key: process.env.APPLITOOLS_KEY
-    }]
-  ]
+  services: ['sauce']
 })

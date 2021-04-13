@@ -7,7 +7,7 @@ The goal in this chapter is to setup the environment we need to use WebdriverIO.
 
 ## Install Node.JS
 
-The project is build on top of Node.js which is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/). It can be installed on all major OS systems such as Windows, Mac or Linux. In order to get it, open the [download page](https://nodejs.org/en/download/) of the project and choose the installer of your environment. It is recommended to download the latest LTS (long-time support). Currently this is Node.js v10.15.3.
+The project is build on top of Node.js which is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/). It can be installed on all major OS systems such as Windows, Mac or Linux. In order to get it, open the [download page](https://nodejs.org/en/download/) of the project and choose the installer of your environment. It is recommended to download the latest LTS (long-time support). Currently this is Node.js `v14.16.1`.
 
 This will also install NPM for you which is the package manager for Node.js. NPM is required to download the WebdriverIO package.
 
@@ -30,10 +30,10 @@ In order to be able to run tests using [WebDriver](https://w3c.github.io/webdriv
 
 For simplicity reasons we just use Chrome in this course, therefor we have download and setup Chromedriver. Every Chrome version requires a specific version of the browser. You can find the version of your Chrome browser [here](chrome://version/) (please open the link with Chrome).
 
-To find the Chromedriver version open the [download page](http://chromedriver.chromium.org/downloads) of the Chromedriver project. Find the right version and download it on your machine. Extract the zip file and ensure that the binary inside is accessible in your `$PATH`. You can also run the following commands (if you have Chrome v74 installed):
+To find the Chromedriver version open the [download page](http://chromedriver.chromium.org/downloads) of the Chromedriver project. Find the right version and download it on your machine. Extract the zip file and ensure that the binary inside is accessible in your `$PATH`. You can also run the following commands (if you have Chrome v89 installed):
 
 ```sh
-$ curl -o ~/Downloads/chromedriver.zip https://chromedriver.storage.googleapis.com/74.0.3729.6/chromedriver_mac64.zip
+$ curl -o ~/Downloads/chromedriver.zip https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_mac64.zip
 $ unzip ~/Downloads/chromedriver.zip -d ~/Downloads/chromedriver
 $ sudo mv ~/Downloads/chromedriver/chromedriver /usr/bin
 ```
@@ -53,5 +53,5 @@ $ chromedriver --version
 It should return something similar to:
 
 ```txt
-ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29})
+ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294})
 ```

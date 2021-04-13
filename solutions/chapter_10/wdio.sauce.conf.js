@@ -35,5 +35,10 @@ exports.config = Object.assign(config, {
     ...sauceOptions
   }],
 
-  services: ['sauce']
+  services: [
+    'sauce',
+    ['applitools', {
+      key: process.env.APPLITOOLS_KEY
+    }]
+  ]
 })

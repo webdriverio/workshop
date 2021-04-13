@@ -1,16 +1,37 @@
-Visual Regression Testing
-=========================
+Page Objects
+============
 
-We now finished our basic test framework setup and can now look into adding more testing capabilities to it. The advantage of using the WebdriverIO testrunner is that in nicely integrates with cloud services like Sauce Labs or Applitools. In this chapter we now want to focus on building an integration with Applitools so that we can add a visual regression testing component to our tests.
+After getting our basic setup for local and cloud based testing ready we can now look at our tests and scale those up. The objective in this chapter is to use e2e best practices to run a big test suite with clean re-usable tests.
 
-1. Create a free trial account on [applitools.com](https://applitools.com/)
-2. Add the [`@wdio/applitools`](https://www.npmjs.com/package/@wdio/applitools-service) service to your config that runs tests on Sauce Labs
-3. Add your Applitools key to your config
-4. Enhance your existing tests so that it takes a screenshot after each test
-5. __Bonus:__ Modify the test so that it functionaly still passes but visual not
+1. Create two page objects to handle the page and a single todo
+2. Move functionality out into the page objects and clean up the tests
+3. Add two more tests that
+  3.1. check if you can clear completed ToDos
+  3.2. check filtering of ToDos
 
-Depending on the scenario we are usually only interested to run our visual regression tests in CI/CD. It wouldn't make much sense to also include the service into our local config, since our developers or QA engineers might work with the applications while running e2e tests. This could break our baseline.
+A full documentation on how page objects can be written with WebdriverIO can be found in the [docs](https://webdriver.io/docs/pageobjects.html). The goal of this excercise is to make your initial test look as follows:
 
-You can find all information on how to take snapshots within the test in the documentation of the service.
+```js
+const TodoApp = require('../pageobjects/main.page')
 
-__Tipp:__ You can use the [`execute`](https://webdriver.io/docs/api/browser/execute.html) command in order to inject JavaScript to modify the page visually.
+describe('My Vue.js Example Application', () => {
+  it('should be able to complete ToDos', () => {
+    TodoApp.open()
+    TodoApp.addTodo('ToDo #1')
+    TodoApp.addTodo('ToDo #2')
+    TodoApp.addTodo('ToDo #3')
+
+    // to see that all ToDos were entered
+    browser.pause(2000)
+
+    TodoApp.todos[1].complete()
+
+    // to see that ToDo was completed
+    browser.pause(2000)
+
+    expect(TodoApp.todoCount).toBe('2 items left')
+  })
+
+  // here your new tests (see point 3)
+})
+```
