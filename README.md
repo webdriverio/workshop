@@ -23,11 +23,12 @@ If you don't have this installed go to [chapter 1](./chapter_01.md) where we wal
 1. [Performance Testing](./chapter_05.md)
 1. [PWA Testing](./chapter_06.md)
 1. [Custom Reporters and Services](./chapter_07.md)
-1. [Sauce Labs Integration](./chapter_08.md)
-1. [Page Objects](./chapter_09.md)
-1. [Visual Regression Testing](./chapter_10.md)
-1. [TypeScript](./chapter_11.md)
-1. [Go Pro](./chapter_12.md)
+1. [CI/CD Integration](./chapter_08.md)
+1. [Sauce Labs Integration](./chapter_09.md)
+1. [Page Objects](./chapter_10.md)
+1. [Visual Regression Testing](./chapter_11.md)
+1. [TypeScript](./chapter_12.md)
+1. [Go Pro](./chapter_13.md)
 
 ## Disclaimer
 

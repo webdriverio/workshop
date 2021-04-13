@@ -36,9 +36,9 @@ exports.config = Object.assign(config, {
   }],
 
   services: [
-    ['sauce', {
-      sauceConnect: true,
-      tunnelIdentifier: 'my Sauce tunnel'
+    'sauce',
+    ['applitools', {
+      key: process.env.APPLITOOLS_KEY
     }]
   ]
 })
