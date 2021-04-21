@@ -11,6 +11,7 @@ In order to go through the course the following software is required to be insta
 - NPM (v7 or higher)
 - Python (2.7 or higher)
 - An updated browser (e.g. Chrome, Firefox etc.)
+- A GitHub account (register [here](https://github.com/join), if you haven't)
 
 If you don't have this installed go to [chapter 1](./chapter_01.md) where we walk through all install steps.
 
