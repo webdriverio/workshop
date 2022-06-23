@@ -1,19 +1,36 @@
-Custom Reporters and Services
-=============================
+Cloud Integration
+=================
 
-One of the advantages of the WebdriverIO framework is that it can be extended in various ways to fit your needs and requirements. [Custom reporter](https://webdriver.io/docs/customreporter.html) and [custom services](https://webdriver.io/docs/customservices.html) provide a way to encapuslate logic into single building blocks and provide them for teams in your organization. It is an excellent way to share code across multiple projects.
+Now as we have a pretty decent functional test suite, let's scale this up and run everything on the cloud using more capabilities to ensure that our example applications works cross functional. You can pick between the cloud vendor of your choice.
 
-In this chapter we want to build a custom service and reporter to improve logging in our framework. The objectives are:
+# [Perfecto](https://www.perfecto.io/)
 
-1. Create a [custom reporter](https://webdriver.io/docs/customreporter.html) that prints out the duration of a test with its name
-2. Allow the user of that reporter to specify an option `showState` which if set to `true` shows the state of the test too
-3. Write a [custom service](https://webdriver.io/docs/customservices.html) and integrate it into your test suite
-4. Move the code you have written to generate the Allure report into the service and remove it from the config file
-5. Enhance the service to clean up the old Allure report before the test starts
-6. Allow the user of that service to specify an option `outputDir` that allows to specify the directory where the report should be stored
+The objectives are:
 
-Services are custom classes that can interfere with the test using hooks. They have their own scope and can store a certain state over a period of time throughout the test. This allows you to e.g. store the history of commands and their results.
+1. Export Perfecto credentials as environment variables
+2. Create a separate config file to run tests locally or in Perfecto
+3. Modify your NPM scripts to be able to run tests locally or in Perfecto
+5. Add 3 more browser capabilities to run your tests
+6. Make sure all your tests run in the same build
 
-While services and reporters are plugins that can be written by the community and published as NPM packages, they can also just be internal packages to be required in your config and added to the services/reporter list.
+# [Sauce Labs](https://saucelabs.com/)
 
-__Note:__ you can highlight elements on the page by setting the border CSS property to e.g. `red dashed 2px`
+The objectives are:
+
+1. Export Sauce credentials as environment variables
+2. Create a separate config file to run tests locally or on Sauce Labs
+3. Modify your NPM scripts to be able to run tests locally or on Sauce
+4. Add [`@wdio/sauce-service`](https://www.npmjs.com/package/@wdio/sauce-service) to have a better integration with Sauce
+5. Add 3 more browser capabilities to run your tests
+6. Make sure all your tests run in the same build
+7. __Bonus:__ run tests in the EU datacenter
+8. __Bonus:__ run tests through [Sauce Connect Proxy](https://wiki.saucelabs.com/display/DOCS/Sauce+Connect+Proxy)
+9. __Bonus:__ add another workflow to your GitHub Action that runs tests on Sauce Labs (Note: make sure to register your Sauce Labs credentials as environment variable)
+
+If you want to scale up your tests and run them with different configurations using different browser you will realise that it becomes difficult to maintain a set of browser environments with their drivers. Here is where Sauce Labs comes in. Sauce Labs is the world largest grid of browser and mobile environments. With WebdriverIO you only need to provide the username and access key information in your config file to get up and running and be able to run your tests in over 1000 different environments.
+
+As best practice we recommend to create different config files for every environment you want to run your tests in. With that you can easily switch back and forth between these environments. To avoid code duplication it is good to move all configs into a main config file and inherit these configs a config files that define special options to serve its environment.
+
+With the [`@wdio/sauce-service`](https://www.npmjs.com/package/@wdio/sauce-service) WebdriverIO provides a simple plugin that improves the integration with Sauce. Among other things it updates the job status for you and gives the job a name based on the test file.
+
+__Note:__ In order to find the correct capabilities for your environment, Sauce Labs has a handy [platform configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator) that allows you to click together your environment.

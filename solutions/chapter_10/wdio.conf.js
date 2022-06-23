@@ -1,4 +1,10 @@
+const allure = require('allure-commandline')
+
 exports.config = {
+    //
+    // ====================
+    // Runner Configuration
+    // ====================
     //
     // ==================
     // Specify Test Files
@@ -32,6 +38,23 @@ exports.config = {
     // from the same test should run tests.
     //
     maxInstances: 10,
+    //
+    // If you have trouble getting all important capabilities together, check out the
+    // Sauce Labs platform configurator - a great tool to configure your capabilities:
+    // https://docs.saucelabs.com/reference/platforms-configurator
+    //
+    capabilities: [{
+        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+        // grid with only 5 firefox instances available you can make sure that not more than
+        // 5 instances get started at a time.
+        maxInstances: 5,
+        //
+        browserName: 'chrome'
+        // If outputDir is provided WebdriverIO can capture driver session logs
+        // it is possible to configure which logTypes to include/exclude.
+        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+        // excludeDriverLogs: ['bugreport', 'server'],
+    }],
     outputDir: './logs',
     //
     // ===================
@@ -101,6 +124,15 @@ exports.config = {
         outputDir: 'allure-results'
       }]
     ],
+    services: [
+      [
+        'chromedriver',
+        { outputDir: './logs' }
+      ],
+      'devtools'
+    ],
+    chromeDriverLogs: './logs',
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -210,5 +242,33 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that ran
      */
     // afterSession: function (config, capabilities, specs) {
-    // }
+    // },
+    /**
+     * Gets executed after all workers got shut down and the process is about to exit.
+     * @param {Object} exitCode 0 - success, 1 - fail
+     * @param {Object} config wdio configuration object
+     * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {<Object>} results object containing test results
+     */
+    onComplete: function(exitCode, config, capabilities, results) {
+      const generation = allure(['generate', 'allure-results'])
+      return new Promise((resolve, reject) => {
+        const generationTimeout = setTimeout(
+          () => reject(new Error('Could not generate Allure report')),
+          5000)
+
+        generation.on('exit', function(exitCode) {
+          clearTimeout(generationTimeout)
+          console.log('Allure report successfully generated')
+          resolve()
+        })
+      })
+    }
+    /**
+    * Gets executed when a refresh happens.
+    * @param {String} oldSessionId session ID of the old session
+    * @param {String} newSessionId session ID of the new session
+    */
+    //onReload: function(oldSessionId, newSessionId) {
+    //}
 }

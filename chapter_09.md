@@ -1,36 +1,30 @@
-Cloud Integration
-=================
+Go Pro
+======
 
-Now as we have a pretty decent functional test suite, let's scale this up and run everything on the cloud using more capabilities to ensure that our example applications works cross functional. You can pick between the cloud vendor of your choice.
+There are a lot more things that you can add to your test suite using WebdriverIO. In this chapter we focus more on smaller items that we try out to get to know how it works. Therefor the objective is more to work with WebdriverIO to get to know its full potential.
 
-# [Perfecto](https://www.perfecto.io/)
+## Headless Testing
 
-The objectives are:
+Sauce Labs has a headless offering that allows you to qickly spin up containers to run tests in the earlier dev lifecycle. Try to run a test on Sauce using a headless container:
 
-1. Export Perfecto credentials as environment variables
-2. Create a separate config file to run tests locally or in Perfecto
-3. Modify your NPM scripts to be able to run tests locally or in Perfecto
-5. Add 3 more browser capabilities to run your tests
-6. Make sure all your tests run in the same build
+1. Copy your test from chapter 2
+2. Modify it so it runs on our headless cloud
 
-# [Sauce Labs](https://saucelabs.com/)
+__Tipp:__ It is not difficult at all to run headless using WebdriverIO. Have a look at the [`options`](https://webdriver.io/docs/options.html) WebdriverIO provides 😉.
 
-The objectives are:
+## Debugging
 
-1. Export Sauce credentials as environment variables
-2. Create a separate config file to run tests locally or on Sauce Labs
-3. Modify your NPM scripts to be able to run tests locally or on Sauce
-4. Add [`@wdio/sauce-service`](https://www.npmjs.com/package/@wdio/sauce-service) to have a better integration with Sauce
-5. Add 3 more browser capabilities to run your tests
-6. Make sure all your tests run in the same build
-7. __Bonus:__ run tests in the EU datacenter
-8. __Bonus:__ run tests through [Sauce Connect Proxy](https://wiki.saucelabs.com/display/DOCS/Sauce+Connect+Proxy)
-9. __Bonus:__ add another workflow to your GitHub Action that runs tests on Sauce Labs (Note: make sure to register your Sauce Labs credentials as environment variable)
+WebdriverIO has some debugging capabilities that can be really useful in order to debug or author tests. Let's try them out:
 
-If you want to scale up your tests and run them with different configurations using different browser you will realise that it becomes difficult to maintain a set of browser environments with their drivers. Here is where Sauce Labs comes in. Sauce Labs is the world largest grid of browser and mobile environments. With WebdriverIO you only need to provide the username and access key information in your config file to get up and running and be able to run your tests in over 1000 different environments.
+1. Run the [`repl`](https://webdriver.io/docs/repl.html) command of `wdio` and play around with the browser in the terminal
+2. Add the [`debug`](https://webdriver.io/docs/api/browser/debug.html) command to one of your tests from the previous chapter
+3. Debug your test using the DevTools application in Chrome
 
-As best practice we recommend to create different config files for every environment you want to run your tests in. With that you can easily switch back and forth between these environments. To avoid code duplication it is good to move all configs into a main config file and inherit these configs a config files that define special options to serve its environment.
+While you are debugging your test in the terminal, try to open the DevTools application in Chrome and click on the green NodeJS icon at the top left of the window. This should open a new DevTools window that allows you interact with the browser using the Console tab in the DevTools application.
 
-With the [`@wdio/sauce-service`](https://www.npmjs.com/package/@wdio/sauce-service) WebdriverIO provides a simple plugin that improves the integration with Sauce. Among other things it updates the job status for you and gives the job a name based on the test file.
+## Custom Sauce Commands
 
-__Note:__ In order to find the correct capabilities for your environment, Sauce Labs has a handy [platform configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator) that allows you to click together your environment.
+Sauce Labs for all Chrome browser tests on desktop certain [extended debugging](https://saucelabs.com/blog/extended-debugging-with-sauce-labs) capabilities that can become useful for speicifc scenarios. Next to HAR file, console or performance capturing you can use [custom commands](https://webdriver.io/docs/api/saucelabs.html) to e.g. check the network activity of the page.
+
+1. Write a new Sauce Labs test for Chrome that checks if the google analytics call was made on our Vue Todo application
+2. Capture the performance metrics of the app with throttled and non throttled network conditions

@@ -1,10 +1,16 @@
-TypeScript
-==========
+Visual Regression Testing
+=========================
 
-With WebdriverIO v7 the code base was overhauled to natively support TypeScript. TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript<sup>[[1](https://en.wikipedia.org/wiki/TypeScript)]</sup>.
+We now finished our basic test framework setup and can now look into adding more testing capabilities to it. The advantage of using the WebdriverIO testrunner is that in nicely integrates with cloud services like Sauce Labs or Applitools. In this chapter we now want to focus on building an integration with Applitools so that we can add a visual regression testing component to our tests.
 
-If you haven't used TypeScript before you can find all information about the language in the official [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html). In this chapter the objectives are:
+1. Create a free trial account on [applitools.com](https://applitools.com/)
+2. Add the [`@wdio/applitools`](https://www.npmjs.com/package/@wdio/applitools-service) service to your config that runs tests on Sauce Labs
+3. Add your Applitools key to your config
+4. Enhance your existing tests so that it takes a screenshot after each test
+5. __Bonus:__ Modify the test so that it functionaly still passes but visual not
 
-- initiate TypeScript by creating a `tsconfig.json` and adding `typescript` to your capabilities
-- rewrite file by file starting from the WebdriverIO config over to your page objects and lastly the actual test files
-- ensure that type errors break the tests
+Depending on the scenario we are usually only interested to run our visual regression tests in CI/CD. It wouldn't make much sense to also include the service into our local config, since our developers or QA engineers might work with the applications while running e2e tests. This could break our baseline.
+
+You can find all information on how to take snapshots within the test in the documentation of the service.
+
+__Tipp:__ You can use the [`execute`](https://webdriver.io/docs/api/browser/execute.html) command in order to inject JavaScript to modify the page visually.

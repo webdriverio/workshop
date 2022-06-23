@@ -1,10 +1,7 @@
-const allure = require('allure-commandline')
+const CustomReporter = require('./customReporter')
+const AllureService = require('./allureService')
 
 exports.config = {
-    //
-    // ====================
-    // Runner Configuration
-    // ====================
     //
     // ==================
     // Specify Test Files
@@ -122,6 +119,9 @@ exports.config = {
       'spec',
       ['allure', {
         outputDir: 'allure-results'
+      }],
+      [CustomReporter, {
+        showState: true
       }]
     ],
     services: [
@@ -129,9 +129,10 @@ exports.config = {
         'chromedriver',
         { outputDir: './logs' }
       ],
-      'devtools'
+      [AllureService, {
+        outputDir: __dirname + '/myAllureReport'
+      }]
     ],
-    chromeDriverLogs: './logs',
 
     //
     // Options to be passed to Mocha.
@@ -250,20 +251,8 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
-      const generation = allure(['generate', 'allure-results'])
-      return new Promise((resolve, reject) => {
-        const generationTimeout = setTimeout(
-          () => reject(new Error('Could not generate Allure report')),
-          5000)
-
-        generation.on('exit', function(exitCode) {
-          clearTimeout(generationTimeout)
-          console.log('Allure report successfully generated')
-          resolve()
-        })
-      })
-    }
+    // onComplete: function(exitCode, config, capabilities, results) {
+    // }
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session

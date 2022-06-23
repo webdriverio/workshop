@@ -1,31 +1,19 @@
-Performance Testing
-===================
+Custom Reporters and Services
+=============================
 
-While it is important that an application is working functionaly there are a lot of other qualitive aspects that you might be interested in. One of them is e.g. performance. A fast loading app is a very important factor not only for user experience but also for SEO and accessibility reasons.
+One of the advantages of the WebdriverIO framework is that it can be extended in various ways to fit your needs and requirements. [Custom reporter](https://webdriver.io/docs/customreporter.html) and [custom services](https://webdriver.io/docs/customservices.html) provide a way to encapuslate logic into single building blocks and provide them for teams in your organization. It is an excellent way to share code across multiple projects.
 
-WebdriverIO allows you to test the performance of your frontend application using its integration to [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) which is a popular tool for capturing important performance metrics. To enable these features you need to add a service extension called [`@wdio/devtools-service`](https://www.npmjs.com/package/@wdio/devtools-service). The objectives for this chapter are:
+In this chapter we want to build a custom service and reporter to improve logging in our framework. The objectives are:
 
-- add `@wdio/devtools-service` to your setup
-- write a new test that captures and asserts the Google Lighthouse performance score of our [example application](http://todomvc.com/examples/vue/)
-    - to emulate a real user experience for our test we mimic our browser to be an iPhone X with a good 3G connection
-- add an assertion for the `speedIndex` metric
-- modify the test so we can run it locally as well as on Sauce Labs
+1. Create a [custom reporter](https://webdriver.io/docs/customreporter.html) that prints out the duration of a test with its name
+2. Allow the user of that reporter to specify an option `showState` which if set to `true` shows the state of the test too
+3. Write a [custom service](https://webdriver.io/docs/customservices.html) and integrate it into your test suite
+4. Move the code you have written to generate the Allure report into the service and remove it from the config file
+5. Enhance the service to clean up the old Allure report before the test starts
+6. Allow the user of that service to specify an option `outputDir` that allows to specify the directory where the report should be stored
 
-## Extra #1
+Services are custom classes that can interfere with the test using hooks. They have their own scope and can store a certain state over a period of time throughout the test. This allows you to e.g. store the history of commands and their results.
 
-Capturing the performance of a browser requires access to native browser APIs. Currently only Chrome allows for such introspection. As browser APIs aren't supported yet by cloud vendors such as Sauce Labs we need to workaround this problem by using [Sauce Labs WebDriver extension](https://wiki.saucelabs.com/display/DOCS/Measure+Page+Load+Performance+Using+Test+Automation) that enable performance testing in the cloud.
+While services and reporters are plugins that can be written by the community and published as NPM packages, they can also just be internal packages to be required in your config and added to the services/reporter list.
 
-- create a second config file for running tests on Sauce Labs
-- update your performance test file to allow run in local and cloud environment, have the file look as following:
-  ```js
-  const runLocal = browser.isSauce ? describe.skip : describe
-  const runSauce = browser.isSauce ? describe : describe.skip
-
-  runLocal('My Example App (tested locally)', () => {
-    // ... your local test code
-  })
-
-  runSauce('My Example App (tested in the cloud)', () => {
-    // ... the same code using Sauce Labs performance API
-  })
-  ```
+__Note:__ you can highlight elements on the page by setting the border CSS property to e.g. `red dashed 2px`
