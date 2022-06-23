@@ -55,3 +55,12 @@ It should return something similar to:
 ```txt
 ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294})
 ```
+
+### Other Drivers
+
+To run tests in other browser you need download their individual drivers and make them available on your system (in your `$PATH`). These other drivers can be found here:
+
+- [Geckodriver](https://github.com/mozilla/geckodriver/releases) (for Firefox)
+- [Edge Driver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/) (for Chromium Edge)
+- [IEDriver](https://www.selenium.dev/downloads/)
+- Safaridriver (for Safari) - already available on all MacOS systems
