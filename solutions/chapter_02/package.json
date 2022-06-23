@@ -7,10 +7,10 @@
     "test": "node test.js"
   },
   "keywords": [],
-  "author": "Christian Bromann <christian@saucelabs.com>",
+  "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "devDependencies": {
-    "devtools": "^7.3.0",
-    "webdriverio": "^7.3.0"
+    "devtools": "^7.20.4",
+    "webdriverio": "^7.20.4"
   }
 }

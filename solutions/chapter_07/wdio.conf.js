@@ -125,7 +125,10 @@ exports.config = {
       }]
     ],
     services: [
-      'chromedriver',
+      [
+        'chromedriver',
+        { outputDir: './logs' }
+      ],
       [AllureService, {
         outputDir: __dirname + '/myAllureReport'
       }]

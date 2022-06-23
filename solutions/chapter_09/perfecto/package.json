@@ -1,10 +1,11 @@
 {
-  "name": "chapter4",
+  "name": "chapter9",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.local.conf.js",
+    "test:cloud": "wdio wdio.perfecto.conf.js"
   },
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",

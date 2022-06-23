@@ -1,7 +1,21 @@
-Sauce Labs Integration
-======================
+Cloud Integration
+=================
 
-Now as we have a pretty decent functional test suite, let's scale this up and run everything on [Sauce Labs](https://saucelabs.com/) using more capabilities to ensure that our example applications works cross functional. The objectives are:
+Now as we have a pretty decent functional test suite, let's scale this up and run everything on the cloud using more capabilities to ensure that our example applications works cross functional. You can pick between the cloud vendor of your choice.
+
+# [Perfecto](https://www.perfecto.io/)
+
+The objectives are:
+
+1. Export Perfecto credentials as environment variables
+2. Create a separate config file to run tests locally or in Perfecto
+3. Modify your NPM scripts to be able to run tests locally or in Perfecto
+5. Add 3 more browser capabilities to run your tests
+6. Make sure all your tests run in the same build
+
+# [Sauce Labs](https://saucelabs.com/)
+
+The objectives are:
 
 1. Export Sauce credentials as environment variables
 2. Create a separate config file to run tests locally or on Sauce Labs

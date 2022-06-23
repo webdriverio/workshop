@@ -17,12 +17,14 @@ exports.config = Object.assign(config, {
   }],
 
   services: [
-    'chromedriver',
+    [
+      'chromedriver',
+      { outputDir: './logs' }
+    ],
     ['applitools', {
       key: process.env.APPLITOOLS_KEY
     }]
   ],
-  chromeDriverLogs: './logs',
 
   /**
    * Gets executed after all workers got shut down and the process is about to exit.

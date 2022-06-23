@@ -125,12 +125,14 @@ exports.config = {
       }]
     ],
     services: [
-      'chromedriver',
+      [
+        'chromedriver',
+        { outputDir: './logs' }
+      ],
       [AllureService, {
         outputDir: __dirname + '/myAllureReport'
       }]
     ],
-    chromeDriverLogs: './logs',
 
     //
     // Options to be passed to Mocha.

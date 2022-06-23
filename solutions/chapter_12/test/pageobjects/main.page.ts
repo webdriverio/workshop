@@ -1,6 +1,6 @@
 import TodoEntry from './todo.entry'
 
-class TodoApp {
+class TodoAppPO {
   get newTodoInput () {
     return $('.new-todo')
   }
@@ -10,7 +10,8 @@ class TodoApp {
   }
 
   get todoCount () {
-    return $('.todo-count').getText().trim()
+    return $('.todo-count').getText()
+      .then((text) => text.trim())
   }
 
   get btnClearCompleted () {
@@ -21,23 +22,19 @@ class TodoApp {
     return browser.url('/examples/vue/')
   }
 
-  addTodo (todoText: string) {
-    this.newTodoInput.setValue(todoText)
-    browser.keys('Enter')
+  async addTodo (todoText: string) {
+    await this.newTodoInput.setValue(todoText)
+    await browser.keys('Enter')
   }
 
-  clear () {
-    this.btnClearCompleted.click()
+  async clear () {
+    await this.btnClearCompleted.click()
   }
 
-  filter (filter: 'all' | 'active' | 'completed') {
-    if (!['all', 'active', 'completed'].includes(filter)) {
-      throw new Error(`provided filter "${filter}" doesn't exist`)
-    }
-
+  async filter (filter: 'all' | 'active' | 'completed') {
     const linkText = filter[0].toUpperCase() + filter.slice(1)
     return $(`=${linkText}`).click()
   }
 }
 
-export default new TodoApp()
+export const TodoApp = new TodoAppPO()

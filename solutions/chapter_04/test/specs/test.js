@@ -1,29 +1,28 @@
 describe('My Vue.js Example Application', () => {
-  it('should be able to complete ToDos', () => {
-    browser.url('http://todomvc.com/examples/vue/')
+  it('should be able to complete ToDos', async () => {
+    await browser.url('http://todomvc.com/examples/vue/')
 
-    const newTodoInput = browser.$('.new-todo')
+    const newTodoInput = await browser.$('.new-todo')
 
-    newTodoInput.setValue('ToDo #1')
-    browser.keys('Enter')
+    await newTodoInput.setValue('ToDo #1')
+    await browser.keys('Enter')
 
-    newTodoInput.setValue('ToDo #2')
-    browser.keys('Enter')
+    await newTodoInput.setValue('ToDo #2')
+    await browser.keys('Enter')
 
-    newTodoInput.setValue('ToDo #3')
-    browser.keys('Enter')
+    await newTodoInput.setValue('ToDo #3')
+    await browser.keys('Enter')
 
     // to see that all ToDos were entered
-    browser.pause(2000)
+    await browser.pause(2000)
 
-    const allTodos = browser.$$('.todo')
-    const toggle = allTodos[1].$('.toggle')
-    toggle.click()
+    const allTodos = await browser.$$('.todo')
+    await allTodos[1].$('.toggle').click()
 
     // to see that ToDo was completed
-    browser.pause(2000)
+    await browser.pause(2000)
 
-    const todoCount = browser.$('.todo-count')
-    expect(todoCount).toHaveText('2 items left')
+    const todoCount = await browser.$('.todo-count')
+    await expect(todoCount).toHaveText('2 items left')
   })
 })

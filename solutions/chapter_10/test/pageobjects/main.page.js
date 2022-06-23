@@ -10,7 +10,8 @@ class TodoApp {
   }
 
   get todoCount () {
-    return $('.todo-count').getText().trim()
+    return $('.todo-count').getText()
+      .then((text) => text.trim())
   }
 
   get btnClearCompleted () {
@@ -21,16 +22,16 @@ class TodoApp {
     return browser.url('/examples/vue/')
   }
 
-  addTodo (todoText) {
-    this.newTodoInput.setValue(todoText)
-    browser.keys('Enter')
+  async addTodo (todoText) {
+    await this.newTodoInput.setValue(todoText)
+    await browser.keys('Enter')
   }
 
-  clear () {
-    this.btnClearCompleted.click()
+  async clear () {
+    await this.btnClearCompleted.click()
   }
 
-  filter (filter) {
+  async filter (filter) {
     if (!['all', 'active', 'completed'].includes(filter)) {
       throw new Error(`provided filter "${filter}" doesn't exist`)
     }

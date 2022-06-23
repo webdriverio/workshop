@@ -17,12 +17,11 @@ export const config: WebdriverIO.Config = Object.assign(sharedConfig, {
   }],
 
   services: [
-    'chromedriver',
-    ['applitools', {
-      key: process.env.APPLITOOLS_KEY
-    }]
+    [
+      'chromedriver',
+      { outputDir: './logs' }
+    ]
   ],
-  chromeDriverLogs: './logs',
 
   /**
    * Gets executed after all workers got shut down and the process is about to exit.
