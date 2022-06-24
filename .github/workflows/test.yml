@@ -1,4 +1,4 @@
-name: Chapter 08 - CI/CD Integration
+name: WebdriverIO Test
 
 on: [push, pull_request]
 
@@ -10,10 +10,10 @@ jobs:
       uses: actions/checkout@v2
     - name: Run Tests
       run: |
-        cd ./solutions/chapter_08
+        cd ./live
         npm install
-        npm run test
+        npm run wdio
     - uses: actions/upload-artifact@v2
       with:
         name: allure-report
-        path: ./solutions/chapter_08/myAllureReport
+        path: ./live/allure-report
