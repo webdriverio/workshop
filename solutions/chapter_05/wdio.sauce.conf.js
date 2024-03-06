@@ -1,7 +1,8 @@
+import url from 'node:url'
 import path from 'node:path'
 import { config as baseConfig } from './wdio.conf.js'
 
-const __dirname = path.resolve(path.dirname(''))
+const __dirname = path.resolve(url.fileURLToPath(new URL('.', import.meta.url)))
 
 export const config = {
   ...baseConfig,

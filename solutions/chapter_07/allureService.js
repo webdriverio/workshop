@@ -1,14 +1,16 @@
-const fs = require('fs-extra')
-const allure = require('allure-commandline')
+import path from 'node:path'
+import fs from 'node:fs/promises'
 
-module.exports = class AllureService {
+import allure from 'allure-commandline'
+
+export default class AllureService {
   constructor (options) {
-    this.outputDir = options.outputDir || __dirname + '/allure-report'
+    this.outputDir = options.outputDir ?? __dirname + '/allure-report'
   }
 
-  onPrepare () {
-    fs.removeSync(__dirname + '/allure-results')
-    fs.removeSync(this.outputDir)
+  async onPrepare () {
+    fs.rmdir(path.join(__dirname, '/allure-results'), { recursive: true })
+    fs.rmdir(this.outputDir, { recursive: true })
   }
 
   onComplete () {
