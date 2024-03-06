@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Run Tests
       run: |
-        cd ./solutions/chapter_09
+        cd ./solutions/chapter_09/saucelabs
         npm install
         npm run test:sauce
       env:
@@ -19,4 +19,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: allure-report
-        path: ./solutions/chapter_08/myAllureReport
+        path: |
+          ./solutions/chapter_09/saucelabs/logs
+          ./solutions/chapter_09/saucelabs/myAllureReport
+      if: always()

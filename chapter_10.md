@@ -9,7 +9,7 @@ After getting our basic setup for local and cloud based testing ready we can now
   3.1. check if you can clear completed ToDos
   3.2. check filtering of ToDos
 
-A full documentation on how page objects can be written with WebdriverIO can be found in the [docs](https://webdriver.io/docs/pageobjects.html). The goal of this excercise is to make your initial test look as follows:
+A full documentation on how page objects can be written with WebdriverIO can be found in the [docs](https://webdriver.io/docs/pageobjects.html). The goal of this exercise is to make your initial test look as follows:
 
 ```js
 const TodoApp = require('../pageobjects/main.page')

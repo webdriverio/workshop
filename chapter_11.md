@@ -7,7 +7,7 @@ We now finished our basic test framework setup and can now look into adding more
 2. Add the [`@wdio/applitools`](https://www.npmjs.com/package/@wdio/applitools-service) service to your config that runs tests on Sauce Labs
 3. Add your Applitools key to your config
 4. Enhance your existing tests so that it takes a screenshot after each test
-5. __Bonus:__ Modify the test so that it functionaly still passes but visual not
+5. __Bonus:__ Modify the test so that it functionally still passes but visual not
 
 Depending on the scenario we are usually only interested to run our visual regression tests in CI/CD. It wouldn't make much sense to also include the service into our local config, since our developers or QA engineers might work with the applications while running e2e tests. This could break our baseline.
 

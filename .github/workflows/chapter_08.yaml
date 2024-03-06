@@ -16,4 +16,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: allure-report
-        path: ./solutions/chapter_08/myAllureReport
+        path: |
+          ./solutions/chapter_08/logs
+          ./solutions/chapter_08/myAllureReport
+      if: always()
