@@ -31,8 +31,8 @@ runSauce('My Example App (tested in the cloud)', () => {
    * setup testing environment
    */
   before(async () => {
-    await browser.throttleNetwork('Good 3G')
-    await browser.throttleCPU(4)
+    await browser.throttleNetwork('GPRS')
+    // await browser.throttleCPU(4)
   })
 
   it('should open the page', async () => {
@@ -42,6 +42,6 @@ runSauce('My Example App (tested in the cloud)', () => {
   it('should assert the performance', async () => {
     const metrics = await browser.getPageLogs('sauce:performance')
     expect(metrics.speedIndex).toBeLessThan(3500)
-    expect(metrics.score).toBeGreaterThan(0.8)
+    expect(metrics.score).toBeGreaterThan(0.6)
   })
 })

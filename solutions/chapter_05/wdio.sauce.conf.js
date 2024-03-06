@@ -1,7 +1,10 @@
-const { config } = require('./wdio.conf')
+import path from 'node:path'
+import { config as baseConfig } from './wdio.conf.js'
 
-exports.config = {
-  ...config,
+const __dirname = path.resolve(path.dirname(''))
+
+export const config = {
+  ...baseConfig,
   services: [],
   specs: [
     __dirname + '/test/specs/extra.js'
