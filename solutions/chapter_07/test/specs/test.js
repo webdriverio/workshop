@@ -16,7 +16,7 @@ describe('My Vue.js Example Application', () => {
     // to see that all ToDos were entered
     await browser.pause(2000)
 
-    const allTodos = await browser.$$('.todo')
+    const allTodos = await browser.$$('.todo-list li')
     await allTodos[1].$('.toggle').click()
 
     // to see that ToDo was completed
