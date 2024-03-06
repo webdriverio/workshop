@@ -1,7 +1,7 @@
 Custom Reporters and Services
 =============================
 
-One of the advantages of the WebdriverIO framework is that it can be extended in various ways to fit your needs and requirements. [Custom reporter](https://webdriver.io/docs/customreporter.html) and [custom services](https://webdriver.io/docs/customservices.html) provide a way to encapuslate logic into single building blocks and provide them for teams in your organization. It is an excellent way to share code across multiple projects.
+One of the advantages of the WebdriverIO framework is that it can be extended in various ways to fit your needs and requirements. [Custom reporter](https://webdriver.io/docs/customreporter.html) and [custom services](https://webdriver.io/docs/customservices.html) provide a way to encapsulate logic into single building blocks and provide them for teams in your organization. It is an excellent way to share code across multiple projects.
 
 In this chapter we want to build a custom service and reporter to improve logging in our framework. The objectives are:
 

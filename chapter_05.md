@@ -1,7 +1,7 @@
 Performance Testing
 ===================
 
-While it is important that an application is working functionaly there are a lot of other qualitive aspects that you might be interested in. One of them is e.g. performance. A fast loading app is a very important factor not only for user experience but also for SEO and accessibility reasons.
+While it is important that an application is working functionally there are a lot of other qualitative aspects that you might be interested in. One of them is e.g. performance. A fast loading app is a very important factor not only for user experience but also for SEO and accessibility reasons.
 
 WebdriverIO allows you to test the performance of your frontend application using its integration to [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) which is a popular tool for capturing important performance metrics. To enable these features you need to add a service extension called [`@wdio/devtools-service`](https://www.npmjs.com/package/@wdio/devtools-service). The objectives for this chapter are:
 

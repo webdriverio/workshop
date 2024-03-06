@@ -5,7 +5,7 @@ There are a lot more things that you can add to your test suite using WebdriverI
 
 ## Headless Testing
 
-Sauce Labs has a headless offering that allows you to qickly spin up containers to run tests in the earlier dev lifecycle. Try to run a test on Sauce using a headless container:
+Sauce Labs has a headless offering that allows you to quickly spin up containers to run tests in the earlier dev lifecycle. Try to run a test on Sauce using a headless container:
 
 1. Copy your test from chapter 2
 2. Modify it so it runs on our headless cloud
@@ -24,7 +24,7 @@ While you are debugging your test in the terminal, try to open the DevTools appl
 
 ## Custom Sauce Commands
 
-Sauce Labs for all Chrome browser tests on desktop certain [extended debugging](https://saucelabs.com/blog/extended-debugging-with-sauce-labs) capabilities that can become useful for speicifc scenarios. Next to HAR file, console or performance capturing you can use [custom commands](https://webdriver.io/docs/api/saucelabs.html) to e.g. check the network activity of the page.
+Sauce Labs for all Chrome browser tests on desktop certain [extended debugging](https://saucelabs.com/blog/extended-debugging-with-sauce-labs) capabilities that can become useful for specific scenarios. Next to HAR file, console or performance capturing you can use [custom commands](https://webdriver.io/docs/api/saucelabs.html) to e.g. check the network activity of the page.
 
 1. Write a new Sauce Labs test for Chrome that checks if the google analytics call was made on our Vue Todo application
 2. Capture the performance metrics of the app with throttled and non throttled network conditions
