@@ -12,7 +12,7 @@ describe('My Vue.js Example Application', () => {
   })
 
   it('should open the page', async () => {
-    await browser.url('http://todomvc.com/examples/vue/')
+    await browser.url('http://todomvc.com/examples/vue/dist/')
   })
 
   it('should assert the performance', async () => {

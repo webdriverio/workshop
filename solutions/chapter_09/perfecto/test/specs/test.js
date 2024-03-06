@@ -1,6 +1,6 @@
 describe('My Vue.js Example Application', () => {
   it('should be able to complete ToDos', async () => {
-    await browser.url('http://todomvc.com/examples/vue/')
+    await browser.url('http://todomvc.com/examples/vue/dist/')
 
     const newTodoInput = await browser.$('.new-todo')
 

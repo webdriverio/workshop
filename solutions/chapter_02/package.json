@@ -2,7 +2,7 @@
   "name": "chapter2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "node test.js"
   },
@@ -10,7 +10,6 @@
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "devDependencies": {
-    "devtools": "^7.20.4",
-    "webdriverio": "^7.20.4"
+    "webdriverio": "^8.32.4"
   }
 }

@@ -1,27 +1,30 @@
-const { remote } = require('webdriverio')
+import { remote } from 'webdriverio'
 
-let browser
-;(async () => {
-  browser = await remote({
-    automationProtocol: 'devtools',
-    capabilities: {
-      browserName: 'chrome'
-    }
-  })
+/**
+ * Note: this example is not working anymore as no TodoMVC backend is available anymore.
+ */
 
-  const values = [{
-    id: 1,
-    title: 'Foo',
-    completed: false
-  }, {
-    id: 2,
-    title: 'Bar',
-    completed: false
-  }, {
-    id: 3,
-    title: 'Loo',
-    completed: false
-  }]
+const browser = await remote({
+  capabilities: {
+    browserName: 'chrome'
+  }
+})
+
+const values = [{
+  id: 1,
+  title: 'Foo',
+  completed: false
+}, {
+  id: 2,
+  title: 'Bar',
+  completed: false
+}, {
+  id: 3,
+  title: 'Loo',
+  completed: false
+}]
+
+try {
   const mock = await browser.mock('https://todo-backend-node-koa.herokuapp.com/todos', {
     method: 'get'
   })
@@ -38,11 +41,6 @@ let browser
   const todoCount = await browser.$('#todo-count')
   const todoCountText = await todoCount.getText()
   console.log(`\n\nToDo count: ${todoCountText}\n\n`);
-
+} finally {
   await browser.deleteSession()
-})().catch(async (e) => {
-  console.error(e)
-
-  // close browser if something in our code went wrong
-  await browser.deleteSession()
-});
+}
