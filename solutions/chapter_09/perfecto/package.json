@@ -1,11 +1,12 @@
 {
   "name": "chapter9",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chapter 9 of the WebdriverIO workshop: Cloud Integration with Perfecto",
   "main": "index.js",
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "test": "wdio wdio.local.conf.js",
     "test:cloud": "wdio wdio.perfecto.conf.js"

@@ -1,6 +1,6 @@
-const { TodoEntry } = require('./todo.entry')
+import { TodoEntry } from './todo.entry.js'
 
-class TodoApp {
+export class TodoAppPageObject {
   get newTodoInput () {
     return $('.new-todo')
   }
@@ -19,7 +19,7 @@ class TodoApp {
   }
 
   open () {
-    return browser.url('/examples/vue/')
+    return browser.url('/examples/vue/dist/')
   }
 
   async addTodo (todoText) {
@@ -41,4 +41,7 @@ class TodoApp {
   }
 }
 
-exports.TodoApp = new TodoApp()
+/**
+ * export an instance of page object as default export
+ */
+export const TodoApp = new TodoAppPageObject()

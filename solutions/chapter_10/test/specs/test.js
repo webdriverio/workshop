@@ -1,4 +1,4 @@
-const { TodoApp } = require('../pageobjects/main.page')
+import { TodoApp } from '../pageobjects/main.page.js'
 
 describe('My Vue.js Example Application', () => {
   it('should be able to complete ToDos', async () => {
@@ -8,12 +8,12 @@ describe('My Vue.js Example Application', () => {
     await TodoApp.addTodo('ToDo #3')
 
     // to see that all ToDos were entered
-    browser.pause(2000)
+    await browser.pause(2000)
 
     await TodoApp.todos[1].complete()
 
     // to see that ToDo was completed
-    browser.pause(2000)
+    await browser.pause(2000)
 
     expect(await TodoApp.todoCount).toBe('2 items left')
   })
