@@ -1,5 +1,5 @@
-const { Eyes, Target } = require('@applitools/eyes-webdriverio')
-const { TodoApp } = require('../pageobjects/main.page')
+import { Eyes, Target } from '@applitools/eyes-webdriverio'
+import { TodoApp } from '../pageobjects/main.page.js'
 
 const eyes = new Eyes()
 eyes.setApiKey(process.env.APPLITOOLS_TOKEN)

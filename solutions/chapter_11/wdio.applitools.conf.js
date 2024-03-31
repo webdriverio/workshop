@@ -1,26 +1,16 @@
-const allure = require('allure-commandline')
+import allure from 'allure-commandline'
 
-const { config } = require('./wdio.conf')
+import { config as baseConfig } from './wdio.conf.js'
 
-exports.config = Object.assign(config, {
+export const config = {
+  ...baseConfig,
+
   capabilities: [{
-    // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-    // grid with only 5 firefox instances available you can make sure that not more than
-    // 5 instances get started at a time.
     maxInstances: 5,
-    //
     browserName: 'chrome'
-    // If outputDir is provided WebdriverIO can capture driver session logs
-    // it is possible to configure which logTypes to include/exclude.
-    // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-    // excludeDriverLogs: ['bugreport', 'server'],
   }],
 
   services: [
-    [
-      'chromedriver',
-      { outputDir: './logs' }
-    ],
     ['applitools', {
       key: process.env.APPLITOOLS_KEY
     }]
@@ -33,7 +23,7 @@ exports.config = Object.assign(config, {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {<Object>} results object containing test results
    */
-  onComplete: function(exitCode, config, capabilities, results) {
+  onComplete: () => {
     const generation = allure(['generate', 'allure-results'])
     return new Promise((resolve, reject) => {
       const generationTimeout = setTimeout(
@@ -47,4 +37,4 @@ exports.config = Object.assign(config, {
       })
     })
   }
-})
+}

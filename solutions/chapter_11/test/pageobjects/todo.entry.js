@@ -1,4 +1,4 @@
-exports.TodoEntry = class TodoEntry {
+export class TodoEntry {
   constructor (elem) {
     if (!elem) {
       throw new Error('To create an instance of a Todo entry you need to provide the Todo element')
