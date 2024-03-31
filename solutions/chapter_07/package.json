@@ -1,14 +1,14 @@
 {
-  "name": "chapter6",
+  "name": "chapter7",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chapter 7 of the WebdriverIO workshop: Custom Reporters and Services",
+  "keywords": [],
+  "author": "Christian Bromann <mail@bromann.dev>",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "test": "wdio wdio.conf.js"
   },
-  "keywords": [],
-  "author": "Christian Bromann <mail@bromann.dev>",
-  "license": "MIT",
   "devDependencies": {
     "@wdio/allure-reporter": "^8.32.4",
     "@wdio/cli": "^8.32.4",

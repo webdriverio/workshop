@@ -134,8 +134,6 @@ export const config = {
         outputDir: __dirname + '/myAllureReport'
       }]
     ],
-    chromeDriverLogs: './logs',
-
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

@@ -6,5 +6,3 @@ To continuously test our application after each commit, let's setup a CI/CD inte
 - Setup a GitHub workflow to run your tests in GitHub
 - Make it run your tests locally
 - Bundle your Allure result page as workflow artifact for your to download
-
-To run tests locally in a GitHub action we recommend to pick `macos-latest` as OS to run the tests on. The GitHub Actions environment comes with Chrome installed so WebdriverIO will work out of the box. Based on that you can create a workflow that installs your project and kicks of your test.

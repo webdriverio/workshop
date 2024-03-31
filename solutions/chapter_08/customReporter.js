@@ -1,6 +1,6 @@
-const BaseReporter = require('@wdio/reporter').default
+import BaseReporter from '@wdio/reporter'
 
-module.exports = class CustomReporter extends BaseReporter {
+export default class CustomReporter extends BaseReporter {
   constructor(options) {
     /*
      * make reporter to write to the output stream by default

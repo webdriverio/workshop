@@ -1,7 +1,12 @@
-const CustomReporter = require('./customReporter')
-const AllureService = require('./allureService')
+import url from 'node:url'
+import path from 'node:path'
 
-exports.config = {
+import CustomReporter from './customReporter.js'
+import AllureService from './allureService.js'
+
+const __dirname = path.resolve(url.fileURLToPath(new URL('.', import.meta.url)))
+
+export const config = {
     //
     // ==================
     // Specify Test Files
@@ -125,15 +130,10 @@ exports.config = {
       }]
     ],
     services: [
-      [
-        'chromedriver',
-        { outputDir: './logs' }
-      ],
       [AllureService, {
         outputDir: __dirname + '/myAllureReport'
       }]
     ],
-
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
