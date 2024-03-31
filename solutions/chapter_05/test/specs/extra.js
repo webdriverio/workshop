@@ -32,7 +32,7 @@ runSauce('My Example App (tested in the cloud)', () => {
    */
   before(async () => {
     await browser.throttleNetwork('GPRS')
-    // await browser.throttleCPU(4)
+    await browser.throttleCPU(4)
   })
 
   it('should open the page', async () => {
