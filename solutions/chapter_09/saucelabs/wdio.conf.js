@@ -1,4 +1,4 @@
-exports.config = {
+export const config = {
     //
     // ==================
     // Specify Test Files

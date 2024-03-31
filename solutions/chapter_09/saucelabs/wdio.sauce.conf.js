@@ -1,19 +1,17 @@
-const { config } = require('./wdio.conf')
+import { config as baseConfig } from './wdio.conf.js'
 
 const sauceOptions = {
   'sauce:options': {
-    seleniumVersion: '3.141.59',
     build: `Build ${Date.now()}`.slice(0, -3)
   }
 }
 
-const chromeOptions = {
-  'goog:chromeOptions': {
-    'w3c': true
-  }
-}
+export const config = {
+  ...baseConfig,
 
-exports.config = Object.assign(config, {
+  /**
+   * Sauce Labs Credentials
+   */
   user: process.env.SAUCE_USERNAME,
   key: process.env.SAUCE_ACCESS_KEY,
 
@@ -41,4 +39,4 @@ exports.config = Object.assign(config, {
       tunnelIdentifier: 'my Sauce tunnel'
     }]
   ]
-})
+}
