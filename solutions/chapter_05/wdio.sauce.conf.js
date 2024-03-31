@@ -1,11 +1,11 @@
 import url from 'node:url'
 import path from 'node:path'
-import { config as baseConfig } from './wdio.conf.js'
+import { config as sharedConfig } from './wdio.conf.js'
 
 const __dirname = path.resolve(url.fileURLToPath(new URL('.', import.meta.url)))
 
 export const config = {
-  ...baseConfig,
+  ...sharedConfig,
   services: [],
   specs: [
     __dirname + '/test/specs/extra.js'

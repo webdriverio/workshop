@@ -1,14 +1,14 @@
 {
   "name": "chapter4",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chapter 4 of the WebdriverIO workshop: Use of Reporter and Services",
   "type": "module",
-  "scripts": {
-    "test": "wdio wdio.conf.js"
-  },
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.32.4",
     "@wdio/cli": "^8.32.4",

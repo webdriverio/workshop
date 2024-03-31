@@ -1,7 +1,7 @@
 {
-  "name": "chapter9",
+  "name": "chapter11",
   "version": "1.0.0",
-  "description": "Chapter 10 of the WebdriverIO workshop: Visual Regression Testing",
+  "description": "Chapter 11 of the WebdriverIO workshop: Visual Regression Testing",
   "main": "index.js",
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",

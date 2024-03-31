@@ -1,15 +1,15 @@
 {
   "name": "chapter5",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chapter 5 of the WebdriverIO workshop: Performance Testing",
+  "keywords": [],
+  "author": "Christian Bromann <mail@bromann.dev>",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "test": "wdio wdio.conf.js",
     "test:sauce": "wdio wdio.sauce.conf.js"
   },
-  "keywords": [],
-  "author": "Christian Bromann <mail@bromann.dev>",
-  "license": "MIT",
   "devDependencies": {
     "@wdio/allure-reporter": "^8.32.4",
     "@wdio/cli": "^8.32.4",

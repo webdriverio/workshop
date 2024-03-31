@@ -1,4 +1,4 @@
-import { config as baseConfig } from './wdio.conf.js'
+import { config as sharedConfig } from './wdio.conf.js'
 
 const perfectoOptions = {
   'perfecto:options': {
@@ -7,7 +7,7 @@ const perfectoOptions = {
 }
 
 export const config = {
-  ...baseConfig,
+  ...sharedConfig,
 
   /**
    * Perfecto connection details

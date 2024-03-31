@@ -1,6 +1,6 @@
 import TodoEntry from './todo.entry'
 
-class TodoAppPO {
+export class TodoAppPageObject {
   get newTodoInput () {
     return $('.new-todo')
   }
@@ -37,4 +37,4 @@ class TodoAppPO {
   }
 }
 
-export const TodoApp = new TodoAppPO()
+export const TodoApp = new TodoAppPageObject()

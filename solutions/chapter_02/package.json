@@ -1,14 +1,14 @@
 {
   "name": "chapter2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chapter 2 of the WebdriverIO workshop: Writing an automation script using Standalone Mode",
+  "keywords": [],
+  "author": "Christian Bromann <mail@bromann.dev>",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "test": "node test.js"
   },
-  "keywords": [],
-  "author": "Christian Bromann <mail@bromann.dev>",
-  "license": "MIT",
   "devDependencies": {
     "webdriverio": "^8.32.4"
   }

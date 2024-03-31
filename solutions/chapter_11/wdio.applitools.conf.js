@@ -1,9 +1,9 @@
 import allure from 'allure-commandline'
 
-import { config as baseConfig } from './wdio.conf.js'
+import { config as sharedConfig } from './wdio.conf.js'
 
 export const config = {
-  ...baseConfig,
+  ...sharedConfig,
 
   capabilities: [{
     maxInstances: 5,

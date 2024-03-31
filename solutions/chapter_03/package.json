@@ -1,14 +1,14 @@
 {
   "name": "chapter3",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chapter 4 of the WebdriverIO workshop: WDIO Testrunner",
   "type": "module",
-  "scripts": {
-    "test": "wdio wdio.conf.js"
-  },
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
   "devDependencies": {
     "@wdio/cli": "^8.32.4",
     "@wdio/local-runner": "^8.32.4",

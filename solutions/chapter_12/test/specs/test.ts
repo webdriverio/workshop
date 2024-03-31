@@ -1,4 +1,4 @@
-const { TodoApp } = require('../pageobjects/main.page')
+import { TodoApp } from '../pageobjects/main.page.js'
 
 describe('My Vue.js Example Application', () => {
   it('should be able to complete ToDos', async () => {

@@ -1,4 +1,4 @@
-import { config as baseConfig } from './wdio.conf.js'
+import { config as sharedConfig } from './wdio.conf.js'
 
 const sauceOptions = {
   'sauce:options': {
@@ -7,7 +7,7 @@ const sauceOptions = {
 }
 
 export const config = {
-  ...baseConfig,
+  ...sharedConfig,
 
   /**
    * Sauce Labs Credentials
