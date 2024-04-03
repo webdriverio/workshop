@@ -27,8 +27,8 @@ If you don't have this installed go to [Chapter 1](./chapter_01.md) where we wal
 1. [Cloud Integration](./chapter_09.md)
 1. [Page Objects](./chapter_10.md)
 1. [Visual Regression Testing](./chapter_11.md)
-1. [Component Testing]('./chapter_12.md')
 1. [TypeScript](./chapter_13.md)
+1. [Component Testing]('./chapter_12.md')
 1. [Go Pro](./chapter_14.md)
 
 ## Disclaimer
