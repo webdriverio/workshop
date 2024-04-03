@@ -1,7 +1,7 @@
 WebdriverIO Hands On
 ====================
 
-This little course will help you to get up and running with WebdriverIO v7. It will walk you through different steps that will explain how to setup and use the project successfully.
+This little course will help you to get up and running with WebdriverIO v7. It will walk you through different steps that will explain how to set up and use the project successfully.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ In order to go through the course the following software is required to be insta
 - An updated browser (e.g. Chrome, Firefox etc.)
 - A GitHub account (register [here](https://github.com/join), if you haven't)
 
-If you don't have this installed go to [chapter 1](./chapter_01.md) where we walk through all install steps.
+If you don't have this installed go to [Chapter 1](./chapter_01.md) where we walk through all install steps.
 
 ## Chapters
 
@@ -24,16 +24,17 @@ If you don't have this installed go to [chapter 1](./chapter_01.md) where we wal
 1. [PWA Testing](./chapter_06.md)
 1. [Custom Reporters and Services](./chapter_07.md)
 1. [CI/CD Integration](./chapter_08.md)
-1. [Sauce Labs Integration](./chapter_09.md)
+1. [Cloud Integration](./chapter_09.md)
 1. [Page Objects](./chapter_10.md)
 1. [Visual Regression Testing](./chapter_11.md)
-1. [TypeScript](./chapter_12.md)
-1. [Go Pro](./chapter_13.md)
+1. [Component Testing]('./chapter_12.md')
+1. [TypeScript](./chapter_13.md)
+1. [Go Pro](./chapter_14.md)
 
 ## Disclaimer
 
-All code and command examples assume that you are using a MacBook. Usually they should also work on Linux or a PowerShell on Windows. For anyone who has problems running certain things with Windows, please create an issue or provide a PR (see below).
+All code and command examples assume that you are using a MacBook. Usually, they should also work on Linux or a PowerShell on Windows. For anyone who has problems running certain things with Windows, please create an issue or provide a PR (see below).
 
 ## Contributing
 
-Any kind suggestion to this course is welcome. If you have an idea, suggestion or improvements please create an issue or even better create a pull request.
+Any kind suggestion for this course is welcome. If you have an idea, suggestion or improvements please create an issue or even better create a pull request.

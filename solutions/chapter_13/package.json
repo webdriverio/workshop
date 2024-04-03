@@ -1,7 +1,7 @@
 {
-  "name": "chapter12",
+  "name": "chapter13",
   "version": "1.0.0",
-  "description": "Chapter 12 of the WebdriverIO workshop: TypeScript",
+  "description": "Chapter 13 of the WebdriverIO workshop: TypeScript",
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
