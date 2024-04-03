@@ -65,3 +65,5 @@ yarn.lock
 allure-results
 allure-report
 myAllureReport
+
+*storybook.log

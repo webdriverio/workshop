@@ -1,25 +1,20 @@
 {
-  "name": "chapter11",
-  "version": "1.0.0",
-  "description": "Chapter 11 of the WebdriverIO workshop: Visual Regression Testing",
-  "main": "index.js",
-  "keywords": [],
-  "author": "Christian Bromann <mail@bromann.dev>",
-  "license": "MIT",
+  "name": "visual-demo",
   "type": "module",
-  "scripts": {
-    "test": "wdio wdio.local.conf.js",
-    "test:applitools": "wdio wdio.applitools.conf.js"
-  },
   "devDependencies": {
-    "@applitools/eyes-webdriverio": "^5.51.2",
-    "@wdio/allure-reporter": "^8.34.0",
-    "@wdio/applitools-service": "^7.3.0",
     "@wdio/cli": "^8.35.1",
     "@wdio/local-runner": "^8.35.1",
     "@wdio/mocha-framework": "^8.35.0",
     "@wdio/spec-reporter": "^8.32.4",
-    "allure-commandline": "^2.27.0",
-    "webdriverio": "^8.35.1"
+    "@wdio/visual-service": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "scripts": {
+    "test:desktop": "wdio run ./wdio.conf.ts --spec='test/specs/desktop.spec.ts'",
+    "test:desktop:layout": "ENABLE_LAYOUT_TESTING=true wdio run ./wdio.conf.ts --spec='test/specs/desktop.spec.ts'",
+    "test:storybook:local": "wdio ./wdio.conf.ts --storybook",
+    "test:storybook:external": "wdio ./wdio.conf.ts --storybook --url=https://govuk-react.github.io/govuk-react/ --numShards=10",
+    "test:storybook:external:skipped": "wdio ./wdio.conf.ts --storybook --url=https://govuk-react.github.io/govuk-react/ --numShards=10 --skipStories=\"/.*(loading-box|spinner).*/\""
   }
 }
