@@ -2,12 +2,13 @@
   "name": "chapter12",
   "version": "1.0.0",
   "description": "Chapter 12 of the WebdriverIO workshop: TypeScript",
-  "scripts": {
-    "test": "wdio wdio.local.conf.ts"
-  },
   "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "wdio wdio.local.conf.ts"
+  },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.34.0",
     "@wdio/cli": "^8.35.1",

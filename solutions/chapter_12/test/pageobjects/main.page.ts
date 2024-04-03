@@ -1,4 +1,4 @@
-import TodoEntry from './todo.entry'
+import { TodoEntry } from './todo.entry.js'
 
 export class TodoAppPageObject {
   get newTodoInput () {
@@ -6,7 +6,13 @@ export class TodoAppPageObject {
   }
 
   get todos () {
-    return $$('.todo').map((elem) => new TodoEntry(elem))
+    /**
+     * This is a workaround for the TypeScript compiler as calling map on $$ returns a
+     * ChainablePromiseArray which allows to lazily resolve the elements and allows to
+     * access the TodoEntry directly, e.g. `TodoApp.todos[0].complete()` instead of
+     * `TodoApp.todos[0].then((todo) => todo.complete())`
+     */
+    return $$('.todo-list li').map((elem) => new TodoEntry(elem)) as any as TodoEntry[]
   }
 
   get todoCount () {
@@ -19,7 +25,7 @@ export class TodoAppPageObject {
   }
 
   open () {
-    return browser.url('/examples/vue/')
+    return browser.url('/examples/vue/dist')
   }
 
   async addTodo (todoText: string) {

@@ -1,6 +1,6 @@
 import allure from 'allure-commandline'
 
-import { config as sharedConfig } from './wdio.conf'
+import { config as sharedConfig } from './wdio.conf.js'
 
 export const config: WebdriverIO.Config = {
   ...sharedConfig,

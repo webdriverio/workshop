@@ -29,11 +29,11 @@ describe('My Vue.js Example Application', () => {
     await TodoApp.filter('active')
     const activeTodos = await TodoApp.todos
     expect(activeTodos.length).toBe(1)
-    expect(activeTodos[0].elem).toHaveText('ToDo #3')
+    expect(activeTodos[0].element).toHaveText('ToDo #3')
 
     await TodoApp.filter('completed')
     const completedTodos = TodoApp.todos
     expect(await completedTodos.length).toBe(1)
-    expect(await completedTodos[0].elem).toHaveText('ToDo #1')
+    expect(await completedTodos[0].element).toHaveText('ToDo #1')
   })
 })
