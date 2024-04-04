@@ -1,21 +1,19 @@
 {
   "name": "chapter7",
   "version": "1.0.0",
-  "description": "Chapter 7 of the WebdriverIO workshop: PWA Testing",
-  "keywords": [],
+  "description": "Chapter 7 of the WebdriverIO workshop: CI/CD Integration",
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "wdio wdio.conf.js",
-    "test:sauce": "wdio wdio.sauce.conf.js"
+    "test": "wdio wdio.conf.js"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.34.0",
     "@wdio/cli": "^8.35.1",
-    "@wdio/devtools-service": "^8.35.1",
     "@wdio/local-runner": "^8.35.1",
     "@wdio/mocha-framework": "^8.35.0",
+    "@wdio/sauce-service": "^8.35.1",
     "@wdio/spec-reporter": "^8.32.4",
     "allure-commandline": "^2.27.0",
     "webdriverio": "^8.35.1"

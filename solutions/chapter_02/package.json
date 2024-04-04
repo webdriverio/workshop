@@ -2,7 +2,6 @@
   "name": "chapter2",
   "version": "1.0.0",
   "description": "Chapter 2 of the WebdriverIO workshop: Writing an automation script using Standalone Mode",
-  "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "type": "module",

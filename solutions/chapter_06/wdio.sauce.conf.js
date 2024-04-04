@@ -8,7 +8,7 @@ export const config = {
   ...sharedConfig,
   services: [],
   specs: [
-    __dirname + '/test/specs/extra.js'
+    path.resolve(__dirname, '/test/specs/extra.js')
   ],
   user: process.env.SAUCE_USERNAME,
   key: process.env.SAUCE_ACCESS_KEY,

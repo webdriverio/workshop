@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Chapter 4 of the WebdriverIO workshop: WDIO Testrunner",
   "type": "module",
-  "keywords": [],
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "scripts": {

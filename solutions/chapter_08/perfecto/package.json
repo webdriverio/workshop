@@ -1,26 +1,21 @@
 {
-  "name": "chapter13",
+  "name": "chapter8",
   "version": "1.0.0",
-  "description": "Chapter 13 of the WebdriverIO workshop: Component Testing",
-  "keywords": [],
+  "description": "Chapter 8 of the WebdriverIO workshop: Cloud Integration with Perfecto",
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test:unit": "wdio wdio.unit.conf.ts",
-    "test:e2e": "wdio wdio.local.conf.ts"
+    "test": "wdio wdio.local.conf.js",
+    "test:cloud": "wdio wdio.perfecto.conf.js"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.34.0",
-    "@wdio/browser-runner": "^8.35.1",
     "@wdio/cli": "^8.35.1",
     "@wdio/local-runner": "^8.35.1",
     "@wdio/mocha-framework": "^8.35.0",
     "@wdio/spec-reporter": "^8.32.4",
     "allure-commandline": "^2.27.0",
-    "lit": "^3.1.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.3",
     "webdriverio": "^8.35.1"
   }
 }
