@@ -1,10 +1,12 @@
-import allure from 'allure-commandline'
+import url from 'node:url'
+import path from 'node:path'
+
+import CustomReporter from './customReporter.js'
+import AllureService from './allureService.js'
+
+const __dirname = path.resolve(url.fileURLToPath(new URL('.', import.meta.url)))
 
 export const config = {
-    //
-    // ====================
-    // Runner Configuration
-    // ====================
     //
     // ==================
     // Specify Test Files
@@ -103,7 +105,7 @@ export const config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['devtools'],
+    // services: [],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -122,9 +124,16 @@ export const config = {
       'spec',
       ['allure', {
         outputDir: 'allure-results'
+      }],
+      [CustomReporter, {
+        showState: true
       }]
     ],
-
+    services: [
+      [AllureService, {
+        outputDir: __dirname + '/myAllureReport'
+      }]
+    ],
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -242,20 +251,8 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
-      const generation = allure(['generate', 'allure-results'])
-      return new Promise((resolve, reject) => {
-        const generationTimeout = setTimeout(
-          () => reject(new Error('Could not generate Allure report')),
-          5000)
-
-        generation.on('exit', function(exitCode) {
-          clearTimeout(generationTimeout)
-          console.log('Allure report successfully generated')
-          resolve()
-        })
-      })
-    }
+    // onComplete: function(exitCode, config, capabilities, results) {
+    // }
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session

@@ -19,47 +19,59 @@ The WDIO testrunner allows you to scale up your automation tests. It takes on a 
 - handles log management
 - and many more
 
-To get up and running with the testrunner you need to install a new package called `@wdio/cli`:
+To get up and running with the testrunner, call:
 
 ```sh
-$ npm i --save-dev @wdio/cli
+$ npm init wdio@latest .
 ```
 
-This will install the CLI interface that you can use to run your tests with. Instead of running the `node` command directly on a file you are now using the new installed cli tool called `wdio` to run your tests. If you start with `wdio` in a new project, it makes sense to run the WDIO setup wizard to generate a config file. For that run:
-
-```sh
-$ npx wdio config
-```
+This will install the CLI interface that you can use to run your tests with. Instead of running the `node` command directly on a file you are now using the new installed cli tool called `wdio` to run your tests. By calling this command a configuration wizard is automatically started to walk you through the set up.
 
 You are being asked a bunch of questions that you can answer as follows:
+
+> A project named "..." was detected at "...", correct?
+
+Usually it should detect the right folder you are in as root folder, therefor you can confirm.
+
+> What type of testing would you like to do?
+
+WebdriverIO provides a variety of use cases listed in the selection. For this workshop we will start with the most common one which is `E2E Testing - of Web or Mobile Applications` but feel free to explore other options as well.
 
 > Where is your automation backend located?
 
 As we are getting started we want to run our test on your local machine. We will integrate SauceLabs in a later chapter.
 
+> Which environment you would like to automate?
+
+Running end-to-end tests requires different setups depending whether you run a browser or mobile test. Here WebdriverIO needs to know your desired environment to properly configure the test. For this workshop we use the `Web - web applications in the browser` environment.
+
+> With which browser should we start?
+
+Let's keep it simple and only select Chrome. Later on we can add more browser to our matrix.
+
 > Which framework do you want to use?
 
 You can decide any framework you want here as their way of working is similar. However [Mocha](https://mochajs.org/) is the most popular one though.
 
-> Do you want to run WebdriverIO commands synchronous or asynchronous?
-
-Select `synchronous` here. If you know how to handle promises you can also choose `asynchronous`, however it comes with some disadvantages (e.g. chaining commands) that make look more verbose.
-
 > Are you using a compiler?
 
-If you prefer to write your tests with TypeScript or Babel you can pick one of the compilers here. This may require additional setup steps (e.g. creating a compiler config file). You can also just continue without a compiler, continue with "No!".
-
-> Where are your test specs located?
-
-Just hit enter and use the suggested location.
+If you prefer to write your tests with TypeScript or Babel you can pick one of the compilers here. We recommend to use TypeScript as it offers a lot of great features like type safety. For this workshop we will use TypeScript but you can also select "No!" and run tests in JavaScript.
 
 > Do you want WebdriverIO to autogenerate some test files?
 
-WebdriverIO generates some example test files, for our workshop these aren't needed, so continue with `n`.
+Since we've already written our automation script, we can press `n` here as our objective will be to transfer that script into a test.
 
 > Which reporter do you want to use?
 
 Select `spec` reporter here. It is the common most used reporter.
+
+> Do you want to add a plugin to your test setup?
+
+No plugins needed for this workshop, continue without selection.
+
+> Would you like to include Visual Testing to your setup?
+
+We will visit Visual Testing later on in [Chapter 11](./chapter_11.md), for now we __don't__ want to add this to our set up.
 
 > Do you want to add a service to your test setup?
 
