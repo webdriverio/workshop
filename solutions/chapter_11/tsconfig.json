@@ -25,7 +25,7 @@
         "noFallthroughCasesInSwitch": true
     },
     "include": [
-        "test",
-        "wdio.conf.ts"
+        "test/**/*.ts",
+        "*.conf.ts"
     ]
 }

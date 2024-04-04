@@ -66,4 +66,8 @@ allure-results
 allure-report
 myAllureReport
 
+# For Chapter 11
 *storybook.log
+apps/
+**/__snapshots__/**/*.png
+**/.tmp/

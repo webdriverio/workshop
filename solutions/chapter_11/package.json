@@ -15,6 +15,7 @@
     "test:desktop:layout": "ENABLE_LAYOUT_TESTING=true wdio run ./wdio.conf.ts --spec='test/specs/desktop.spec.ts'",
     "test:storybook:local": "wdio ./wdio.conf.ts --storybook",
     "test:storybook:external": "wdio ./wdio.conf.ts --storybook --url=https://govuk-react.github.io/govuk-react/ --numShards=10",
-    "test:storybook:external:skipped": "wdio ./wdio.conf.ts --storybook --url=https://govuk-react.github.io/govuk-react/ --numShards=10 --skipStories=\"/.*(loading-box|spinner).*/\""
+    "test:storybook:external:skipped": "wdio ./wdio.conf.ts --storybook --url=https://govuk-react.github.io/govuk-react/ --numShards=10 --skipStories=\"/.*(loading-box|spinner).*/\"",
+    "test:mobile:android:app": "wdio run ./wdio.android.emulator.conf.ts --spec='test/specs/mobile.app.spec.ts'"
   }
 }
