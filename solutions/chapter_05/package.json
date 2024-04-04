@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.conf.ts"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.32.4",
@@ -16,6 +16,8 @@
     "@wdio/sauce-service": "^8.32.4",
     "@wdio/spec-reporter": "^8.32.4",
     "allure-commandline": "^2.27.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
     "webdriverio": "^8.32.4"
   }
 }

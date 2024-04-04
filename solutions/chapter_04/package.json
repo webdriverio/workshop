@@ -6,7 +6,7 @@
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.conf.ts"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.32.4",
@@ -15,6 +15,8 @@
     "@wdio/mocha-framework": "^8.32.4",
     "@wdio/spec-reporter": "^8.32.4",
     "allure-commandline": "^2.27.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
     "webdriverio": "^8.32.4"
   }
 }
