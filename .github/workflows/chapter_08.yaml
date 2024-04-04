@@ -1,4 +1,4 @@
-name: Chapter 08 - CI/CD Integration
+name: Chapter 07 - CI/CD Integration
 
 on: [push, pull_request]
 
@@ -10,13 +10,13 @@ jobs:
       uses: actions/checkout@v2
     - name: Run Tests
       run: |
-        cd ./solutions/chapter_08
+        cd ./solutions/chapter_07
         npm install
         npm run test
     - uses: actions/upload-artifact@v2
       with:
         name: allure-report
         path: |
-          ./solutions/chapter_08/logs
-          ./solutions/chapter_08/myAllureReport
+          ./solutions/chapter_07/logs
+          ./solutions/chapter_07/myAllureReport
       if: always()
