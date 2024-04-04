@@ -1,0 +1,22 @@
+name: Chapter 07 - CI/CD Integration
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Run Tests
+      run: |
+        cd ./solutions/chapter_07
+        npm install
+        npm run test
+    - uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: |
+          ./solutions/chapter_07/logs
+          ./solutions/chapter_07/myAllureReport
+      if: always()
