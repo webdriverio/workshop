@@ -1,10 +1,10 @@
 Writing an automation script using Standalone Mode
 ==================================================
 
-After we have setup everything to automate Chrome on our machine, let's write our first automated script. The objective is as follows: write a simple Node.js script that does the following things:
+After we have set up everything to automate Chrome on our machine, let's write our first automated script. The objective is as follows: write a simple Node.js script that does the following things:
 
 1. Open the Chrome browser
-2. Go to the following page: [http://todomvc.com/examples/vue/](http://todomvc.com/examples/vue/)
+2. Go to the following page: [http://todomvc.com/examples/vue/dist](http://todomvc.com/examples/vue/dist)
 3. Enter 3 items into the ToDo list
 4. Mark the second item as completed
 5. Print out the amount of items left
@@ -90,7 +90,7 @@ const browser = await remote({
 
 You can then interact with the browser using the [WebdriverIO API](https://webdriver.io/docs/api.html) as well as the [Puppeteer](https://pptr.dev/) framework.
 
-__Task:__ run WebdriverIO using the `devtools` automation protocol and pre-populate the local storage with items so that if you open the page it should have already have 3 ToDos stored. The local storage key for these items is `todos-vuejs` and should contain a list like:
+__Task:__ run WebdriverIO and make use of the [`getPuppeteer`](https://webdriver.io/docs/api/browser/getPuppeteer/) and pre-populate the local storage with items so that if you open the page it should have already have 3 ToDos stored. The local storage key for these items is `todos-vuejs` and should contain a list like:
 
 ```json
 [{
@@ -108,14 +108,5 @@ __Task:__ run WebdriverIO using the `devtools` automation protocol and pre-popul
 }]
 ```
 
-## Extra #3
-
-In case your application is using a REST API you can also leverage WebdriverIO's [mock capabilities](https://webdriver.io/docs/api/browser/mock). This avoids switching between Protractor and WebDriver code and just makes you use the native WebdriverIO interface.
-
-__Task:__ modify your __Extra 2__ solution to use a TodoMVC app with a REST API backend, e.g. [https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos](https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos), and simplify your script to make use of the [mock](https://webdriver.io/docs/api/browser/mock) command.
-
-Note:
-- the app url is now `https://www.todobackend.com/client/index.html?https://todo-backend-node-koa.herokuapp.com/todos`
-- the todobackend app uses a slightly outdated TodoMVC app, adjust your element selectors from `$$('.todo')` -> `$$('#todo-list li')` and `$('.todo-count')` to `$('#todo-count')`
-
-If everything is working you should see the app loading ToDos defined in your tests rather than accessing the API.
+> [!TIP]
+> We recommend to take a look into the [`setRequestInterception`](https://pptr.dev/api/puppeteer.page.setrequestinterception/) method that allows to mimic a page load on given hostname and access the local storage for it.
