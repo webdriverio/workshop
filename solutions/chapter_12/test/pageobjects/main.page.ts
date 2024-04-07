@@ -1,0 +1,46 @@
+import { TodoEntry } from './todo.entry.js'
+
+export class TodoAppPageObject {
+  get newTodoInput () {
+    return $('.new-todo')
+  }
+
+  get todos () {
+    /**
+     * This is a workaround for the TypeScript compiler as calling map on $$ returns a
+     * ChainablePromiseArray which allows to lazily resolve the elements and allows to
+     * access the TodoEntry directly, e.g. `TodoApp.todos[0].complete()` instead of
+     * `TodoApp.todos[0].then((todo) => todo.complete())`
+     */
+    return $$('.todo-list li').map((elem) => new TodoEntry(elem)) as any as TodoEntry[]
+  }
+
+  get todoCount () {
+    return $('.todo-count').getText()
+      .then((text) => text.trim())
+  }
+
+  get btnClearCompleted () {
+    return $('.clear-completed')
+  }
+
+  open () {
+    return browser.url('/examples/vue/dist')
+  }
+
+  async addTodo (todoText: string) {
+    await this.newTodoInput.setValue(todoText)
+    await browser.keys('Enter')
+  }
+
+  async clear () {
+    await this.btnClearCompleted.click()
+  }
+
+  async filter (filter: 'all' | 'active' | 'completed') {
+    const linkText = filter[0].toUpperCase() + filter.slice(1)
+    return $(`=${linkText}`).click()
+  }
+}
+
+export const TodoApp = new TodoAppPageObject()

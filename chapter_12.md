@@ -1,30 +1,36 @@
-Go Pro
-======
+WebDriver Bidi
+==============
 
-There are a lot more things that you can add to your test suite using WebdriverIO. In this chapter we focus more on smaller items that we try out to get to know how it works. Therefor the objective is more to work with WebdriverIO to get to know its full potential.
+For some time now all browser vendors work on a new version of WebDriver called [WebDriver Bidi](https://w3c.github.io/webdriver-bidi/) which enables new automation capabilities for all browser. In this chapter we want to get familiar with the new protocol and use some of its capabilities.
 
-## Headless Testing
+## Capturing `console.log` Entries
 
-Sauce Labs has a headless offering that allows you to quickly spin up containers to run tests in the earlier dev lifecycle. Try to run a test on Sauce using a headless container:
+One of the new features of the WebDriver Bidi protocol is its ability to capture `console.log` and error entries from the application you are browsing. This is made possible through the bi-directional communication between the browser driver and your automation library. In WebdriverIO you can get access these `console.log` events by registering event listener to the browser.
 
-1. Copy your test from chapter 2
-2. Modify it so it runs on our headless cloud
+The objective of this chapter are the following:
 
-__Tipp:__ It is not difficult at all to run headless using WebdriverIO. Have a look at the [`options`](https://webdriver.io/docs/options.html) WebdriverIO provides 😉.
+1. Create a new test for testing out Bidi commands
+1. Opt-in to the new protocol capabilities by adding `webSocketUrl: true` to your capabilities
+1. Write a test that verifies whether there are any JavaScript errors after navigating to the page
+  1. Call the [`sessionSubscribe`](https://webdriver.io/docs/api/webdriverBidi#sessionsubscribe) command and let the driver know that you are interested in `log.entryAdded` events
+  1. Register a command handler via `browser.on('log.entryAdded', (entryAdded) => ...)` and log error entries
+  1. Make the test navigate to `https://the-internet.herokuapp.com/javascript_error`
+  1. Let the test fail if you discover an error being thrown during page load
 
-## Debugging
+> [!NOTE]
+> JavaScript errors are often raised after the page load, when the application starts to render. Therefor you probably won't have any log entries right after you call the `url` command. For simplicity let's use `await browser.pause(1000)` to delay the test execution and make sure that our events come through.
 
-WebdriverIO has some debugging capabilities that can be really useful in order to debug or author tests. Let's try them out:
+## Capture Network Events
 
-1. Run the [`repl`](https://webdriver.io/docs/repl.html) command of `wdio` and play around with the browser in the terminal
-2. Add the [`debug`](https://webdriver.io/docs/api/browser/debug.html) command to one of your tests from the previous chapter
-3. Debug your test using the DevTools application in Chrome
+Next to console events you can also listen to network activities now. The WebDriver Bidi protocol offers several events you can listen to that contain information on requests made by the browser.
 
-While you are debugging your test in the terminal, try to open the DevTools application in Chrome and click on the green NodeJS icon at the top left of the window. This should open a new DevTools window that allows you interact with the browser using the Console tab in the DevTools application.
+The objective of this chapter are the following:
 
-## Custom Sauce Commands
+1. Add a new test where we want to verify that all page requests where successful
+1. Use the `sessionSubscribe` command again, to enable events for `network.responseCompleted`
+1. Register a command handler via `browser.on('network.responseCompleted', (responses) => ...)` and log failing network requests
+1. Make the test navigate to `https://the-internet.herokuapp.com/broken_images`
+1. Let the test fail if the request contained any failing requests
 
-Sauce Labs for all Chrome browser tests on desktop certain [extended debugging](https://saucelabs.com/blog/extended-debugging-with-sauce-labs) capabilities that can become useful for specific scenarios. Next to HAR file, console or performance capturing you can use [custom commands](https://webdriver.io/docs/api/saucelabs.html) to e.g. check the network activity of the page.
-
-1. Write a new Sauce Labs test for Chrome that checks if the google analytics call was made on our Vue Todo application
-2. Capture the performance metrics of the app with throttled and non throttled network conditions
+> [!NOTE]
+> Requests to application assets are often made after the page load, when the application starts to render. Therefor you probably won't have any request entries logged right after you call the `url` command. For simplicity let's use `await browser.pause(1000)` to delay the test execution and make sure that our requests come through.
