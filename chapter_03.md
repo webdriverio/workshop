@@ -1,14 +1,24 @@
-WDIO Testrunner
-===============
+# WDIO Testrunner
 
-If you have finished the last chapter successfully, good job 👍! We are now ready to build up our actually test suite using the WebdriverIO testrunner. This testrunner helps you with various things that you need in your day to day automation life. It provides you with useful reporters, services and other neat features that will make your life easier. In this chapter we gonna port our current Node.js automation script into a test suite that is using the testrunner. The objectives are as follow:
+If you have finished the last chapter successfully, good job 👍! If you just started with this chapter then no worries.
 
-1. Initiate a `wdio.conf.js` file using the WDIO setup wizard
+We are going to set up everything to automate Chrome on our machine with the WDIO Testrunner (and write our first automated script). The testrunner helps you with various things that you need in your day to day automation life. It provides you with useful reporters, services and other neat features that will make your life easier.
+
+In this chapter, we gonna port our current Node.js automation script into a test suite that is using the testrunner. If you haven't written the script, then the objective for the script is as follows: write a simple Node.js script that does the following things:
+
+1. Open the Chrome browser
+2. Go to the following page: [http://todomvc.com/examples/vue/dist](http://todomvc.com/examples/vue/dist)
+3. Enter 3 items into the ToDo list
+4. Mark the second item as completed
+5. Print out the amount of items left
+
+The objectives for this chapter are as follow:
+
+1. Initiate a `wdio.conf.ts` file using the WDIO setup wizard
 2. Create a test directory where we put all our e2e test files
-3. Port the code in your `test.js` file into an actual test
-4. Make your code synchronous (no `async/await` anymore)
-5. Add an assertion library to make an assertion in the test
-6. Create a simple entry in package.json to run test through NPM script
+3. Port the code in your `test.ts` file into an actual test
+4. Add an assertion library to make an assertion in the test
+5. Create a simple entry in package.json to run test through NPM script
 
 The WDIO testrunner allows you to scale up your automation tests. It takes on a lot of work that you would need to setup up manually. The features and advantages of it are the following:
 
@@ -39,7 +49,7 @@ WebdriverIO provides a variety of use cases listed in the selection. For this wo
 
 > Where is your automation backend located?
 
-As we are getting started we want to run our test on your local machine. We will integrate SauceLabs in a later chapter.
+As we are getting started we want to run our test on your local machine. We will integrate cloud vendors in a later chapter.
 
 > Which environment you would like to automate?
 
@@ -59,7 +69,13 @@ If you prefer to write your tests with TypeScript or Babel you can pick one of t
 
 > Do you want WebdriverIO to autogenerate some test files?
 
-Since we've already written our automation script, we can press `n` here as our objective will be to transfer that script into a test.
+Since we've already written our automation script, we can press `n` here. We'll reserve the task of crafting our own page objects for a subsequent chapter.
+
+> [!NOTE]
+> After creating the test file, store it in your chosen test folder. Then, you need to adjust the `specs` array in the `wdio.conf.ts` file to point to your test files. For example, if you've stored your test files in a folder named `tests`, update the `specs` array like this: `specs: ['./tests/**/*.ts']`. This pattern `**/*.ts` will include all TypeScript files in the `tests` folder and its subfolders. Remember to replace `./tests` with the actual path to your test folder. Here are a couple of examples for different structures:
+>
+> - For a flat structure: `specs: ['./tests/*.ts']`
+> - For nested folders: `specs: ['./tests/**/*.ts']`
 
 > Which reporter do you want to use?
 
@@ -71,31 +87,32 @@ No plugins needed for this workshop, continue without selection.
 
 > Would you like to include Visual Testing to your setup?
 
-We will visit Visual Testing later on in [Chapter 11](./chapter_11.md), for now we __don't__ want to add this to our set up.
+We will visit Visual Testing later on in [Chapter 10](./chapter_10.md), for now we **don't** want to add this to our setup.
 
 > Do you want to add a service to your test setup?
 
 Hit enter without any selection as we want to add service integrations later on.
 
-> What is the base url?
+> Do you want me to run `npm install`
 
-The base url contains the root url of the application that we want to test. In this case it is our example Vue.js application: `http://todomvc.com/examples/vue/`.
+Select `Y` and the project will be created and dependencies will be installed.
 
 After all these questions your config file is created. Next try to solve the objectives mention at the top of this file. If you port the `test.js` code to an actual test, make sure you follow the [Mocha](https://mochajs.org/) conventions of writing test files. Simple setup would like this:
 
 ```js
-describe('My Vue.js Example Application', () => {
-  it('should be able to complete ToDos', () => {
+describe("My Vue.js Example Application", async () => {
+  it("should be able to complete ToDos", async () => {
     // add your automation code here
     // ...
-  })
-})
+  });
+});
 ```
 
-After you've ported the tests you can run it using the wdio testrunner by calling:
+After you've ported/written the tests you can run it using the wdio testrunner by calling:
 
 ```sh
 $ npx wdio
 ```
 
-__Note:__ as you use the WDIO testrunner, you don't need to initialise and close the test session anymore. Also make sure you still have Chromedriver running in a parallel terminal window.
+> [!NOTE]
+> If you have Chrome installed on your machine then WebdriverIO will automatically download and install a matching ChromeDriver version. This will only happen the first time you run your script
