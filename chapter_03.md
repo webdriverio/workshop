@@ -17,7 +17,6 @@ The objectives for this chapter are as follow:
 1. Initiate a `wdio.conf.ts` file using the WDIO setup wizard
 2. Create a test directory where we put all our e2e test files
 3. Port the code in your `test.ts` file into an actual test
-4. Make your code asynchronous
 5. Add an assertion library to make an assertion in the test
 6. Create a simple entry in package.json to run test through NPM script
 
