@@ -12,7 +12,7 @@ In this chapter, we gonna port our current Node.js automation script into a test
 4. Mark the second item as completed
 5. Print out the amount of items left
 
-The objectives for the Testrunner are as follow:
+The objectives for this chapter are as follow:
 
 1. Initiate a `wdio.conf.ts` file using the WDIO setup wizard
 2. Create a test directory where we put all our e2e test files
