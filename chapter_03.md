@@ -72,7 +72,7 @@ If you prefer to write your tests with TypeScript or Babel you can pick one of t
 Since we've already written our automation script, we can press `n` here. We'll reserve the task of crafting our own page objects for a subsequent chapter.
 
 > [!NOTE]
-> After creating the test file, store it in your chosen test folder. Then, you need to adjust the `specs` array in the `wdio.conf.ts` file to point to your test files. For example, if you've stored your test files in a folder named `tests`, update the `specs` array like this: `specs: ['./tests/**/*.ts']`. This pattern `**/*.ts` will include all TypeScript files in the `tests` folder and its subfolders. Remember to replace `./tests` with the actual path to your test folder. Here are a couple of examples for different structures:
+> After creating the test file, store it in your chosen test folder. Then, you need to adjust the `specs` array in the `wdio.conf.ts` file to point to your test files. For example, if you've stored your test files in a folder named `tests`, update the `specs` array like this: `specs: ['./tests/**/*.ts']`. This pattern `**/*.ts` will include all TypeScript files in the `tests` folder and its sub-folders. Remember to replace `./tests` with the actual path to your test folder. Here are a couple of examples for different structures:
 >
 > - For a flat structure: `specs: ['./tests/*.ts']`
 > - For nested folders: `specs: ['./tests/**/*.ts']`
@@ -115,4 +115,4 @@ $ npx wdio
 ```
 
 > [!NOTE]
-> If you have Chrome installed on your machine then WebdriverIO will automatically download and install a matching ChromeDriver version. This will only happen the first time you run your script
+> If you have Chrome installed on your machine then WebdriverIO will automatically download and install a matching ChromeDriver version. This will only happen the first time you run your script.

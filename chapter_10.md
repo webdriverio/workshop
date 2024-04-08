@@ -69,8 +69,8 @@ describe('Guinea Pig Application', () => {
     await expect(browser).toMatchScreenSnapshot('viewport')
   })
 
-  it('should be able to create fullpage snapshot', async () => {
-    await expect(browser).toMatchFullPageSnapshot('fullpage')
+  it('should be able to create full page snapshot', async () => {
+    await expect(browser).toMatchFullPageSnapshot('full-page')
   })
 })
 ```
@@ -98,7 +98,7 @@ The Guinea Pig app has a sticky header, which may cause incorrect baseline image
 2. And to the full-page snapshot test:
 
 ```ts
-.toMatchFullPageSnapshot('fullpage', {hideAfterFirstScroll: [await $('nav.navbar')]})
+.toMatchFullPageSnapshot('full page', {hideAfterFirstScroll: [await $('nav.navbar')]})
 ```
 
 3. Rerun the test: `npm run wdio -- --spec="test/specs/desktop.spec.ts"`.

@@ -10,7 +10,7 @@ Sauce Labs has a headless offering that allows you to quickly spin up containers
 1. Copy your test from chapter 2
 2. Modify it so it runs on our headless cloud
 
-__Tipp:__ It is not difficult at all to run headless using WebdriverIO. Have a look at the [`options`](https://webdriver.io/docs/options.html) WebdriverIO provides 😉.
+__Tip:__ It is not difficult at all to run headless using WebdriverIO. Have a look at the [`options`](https://webdriver.io/docs/options.html) WebdriverIO provides 😉.
 
 ## Debugging
 

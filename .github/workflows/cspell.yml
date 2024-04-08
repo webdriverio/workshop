@@ -1,0 +1,14 @@
+name: CSpell
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install CSpell
+      run: npm install -g cspell
+    - name: Run CSpell
+      run: cspell "**/*.md" -c ./.github/config/cspell.json

@@ -1,0 +1,26 @@
+{
+  "ignorePaths": [
+    "**/node_modules/**"
+  ],
+  "language": "en",
+  "words": [
+    "wdio",
+    "webdriverio",
+    "webdriver",
+    "Appium",
+    "Bidi",
+    "testrunner",
+    "chromedriver",
+    "nuxt",
+    "preact",
+    "react",
+    "reactjs",
+    "vuejs",
+    "wimselles",
+    "todos",
+    "configurator",
+    "wdiodemoapp",
+    "UIAutomator2",
+    "pageobjects"
+  ]
+}

@@ -15,7 +15,7 @@ describe('Guinea Pig Application', () => {
     await expect(browser).toMatchScreenSnapshot('viewport')
   })
 
-  it('should be able to create fullpage snapshot', async () => {
+  it('should be able to create full page snapshot', async () => {
     await expect(browser).toMatchFullPageSnapshot('fullpage', {hideAfterFirstScroll: [await $('nav.navbar')]})
   })
 })
