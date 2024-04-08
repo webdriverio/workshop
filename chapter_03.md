@@ -70,7 +70,7 @@ If you prefer to write your tests with TypeScript or Babel you can pick one of t
 
 > Do you want WebdriverIO to autogenerate some test files?
 
-Since we've already written our automation script, we can press `n` here as our objective will be to transfer that script into a test.
+Since we've already written our automation script, we can press `n` here. We'll reserve the task of crafting our own page objects for a subsequent chapter.
 
 If you select `y` you will get the following questions
 
