@@ -15,5 +15,3 @@ In this chapter we want to build a custom service and reporter to improve loggin
 Services are custom classes that can interfere with the test using hooks. They have their own scope and can store a certain state over a period of time throughout the test. This allows you to e.g. store the history of commands and their results.
 
 While services and reporters are plugins that can be written by the community and published as NPM packages, they can also just be internal packages to be required in your config and added to the services/reporter list.
-
-__Note:__ you can highlight elements on the page by setting the border CSS property to e.g. `red dashed 2px`
