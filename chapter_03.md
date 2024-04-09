@@ -107,6 +107,14 @@ describe("My Vue.js Example Application", async () => {
 });
 ```
 
+To automate the browser through the [browser object](https://webdriver.io/docs/api/browser) you can either import it via:
+
+```ts
+import { browser } from '@wdio/globals'
+```
+
+or use `browser` directly as variable since it is available in the global scope.
+
 After you've ported/written the tests you can run it using the wdio testrunner by calling:
 
 ```sh
