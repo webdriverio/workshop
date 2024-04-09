@@ -24,10 +24,9 @@ The WDIO testrunner allows you to scale up your automation tests. It takes on a 
 
 - runs test in a parallel automatically
 - creates and tears down sessions for you
-- allows to run commands synchronously
 - comes with a lot plugins written by core members and 3rd party developers
 - handles log management
-- and many more
+- and much more
 
 To get up and running with the testrunner, call:
 
