@@ -1,5 +1,4 @@
-Visual Regression Testing
-=========================
+# Visual Regression Testing
 
 To walk through the advanced features, we will start with a clean project. This approach ensures that we have a controlled environment for our tests.
 With this new project, we'll delve into the capabilities of the WebdriverIO testrunner, focusing on its integration with the [`@wdio/visual-service`](https://github.com/webdriverio/visual-testing). This service, designed specifically for WebdriverIO, accommodates a variety of testing environments, including:
@@ -14,11 +13,11 @@ Our objectives for Visual Testing include:
 
 - [Setup a clean project](#setup-a-clean-project)
 - Creating Desktop Web Tests:
-    - [Element/viewport/full-page snapshot tests](#desktop-web-tests)
-    - [Use Layout testing](#desktop-web-layout-testing)
+  - [Element/viewport/full-page snapshot tests](#desktop-web-tests)
+  - [Use Layout testing](#desktop-web-layout-testing)
 - Time permitting:
-    - [Creating storybook snapshots](#extra-1-storybook-testing)
-    - [Creating native mobile app element/viewport snapshots](#extra-2-mobile-native-app)
+  - [Creating storybook snapshots](#extra-1-storybook-testing)
+  - [Creating native mobile app element/viewport snapshots](#extra-2-mobile-native-app)
 
 We will guide you through setting up a clean project in the #setup section.
 
@@ -52,27 +51,27 @@ We will guide you through setting up a clean project in the #setup section.
 5. In the `test/specs/`folder, create a file named `desktop.spec.ts` and insert the following code:
 
 ```ts
-import {$, browser, expect} from '@wdio/globals'
+import { $, browser, expect } from "@wdio/globals";
 
-describe('Guinea Pig Application', () => {
+describe("Guinea Pig Application", () => {
   beforeEach(async () => {
-    await browser.setWindowSize(1200, 800)
-    await browser.url('http://guinea-pig.webdriver.io/image-compare.html')
-    await $('.hero__title-logo').waitForDisplayed()
+    await browser.setWindowSize(1200, 800);
+    await browser.url("http://guinea-pig.webdriver.io/image-compare.html");
+    await $(".hero__title-logo").waitForDisplayed();
   });
 
-  it('should be able to create an element snapshot', async () => {
-    await expect($('.hero__title-logo')).toMatchElementSnapshot('logo')
-  })
+  it("should be able to create an element snapshot", async () => {
+    await expect($(".hero__title-logo")).toMatchElementSnapshot("logo");
+  });
 
-  it('should be able to create a viewport snapshot', async () => {
-    await expect(browser).toMatchScreenSnapshot('viewport')
-  })
+  it("should be able to create a viewport snapshot", async () => {
+    await expect(browser).toMatchScreenSnapshot("viewport");
+  });
 
-  it('should be able to create full page snapshot', async () => {
-    await expect(browser).toMatchFullPageSnapshot('full-page')
-  })
-})
+  it("should be able to create full page snapshot", async () => {
+    await expect(browser).toMatchFullPageSnapshot("full-page");
+  });
+});
 ```
 
 ## Desktop Web Tests
@@ -89,16 +88,22 @@ Execute `npm run wdio -- --spec="test/specs/desktop.spec.ts"` and review the fol
 
 The Guinea Pig app has a sticky header, which may cause incorrect baseline images for element and full-page snapshots. Modify these by:
 
-1. Adding the following to the element snapshot test:
+1. Change the following in the element snapshot test:
 
 ```ts
+// From
+.toMatchElementSnapshot('logo')
+// To
 .toMatchElementSnapshot('logo', {hideElements: [await $('nav.navbar')]})
 ```
 
 2. And to the full-page snapshot test:
 
 ```ts
-.toMatchFullPageSnapshot('full page', {hideAfterFirstScroll: [await $('nav.navbar')]})
+// From
+.toMatchFullPageSnapshot('full-page')
+// To
+.toMatchFullPageSnapshot('full-page', {hideAfterFirstScroll: [await $('nav.navbar')]})
 ```
 
 3. Rerun the test: `npm run wdio -- --spec="test/specs/desktop.spec.ts"`.
@@ -111,9 +116,10 @@ The Visual Testing module uses pixel-by-pixel comparison, which can lead to fals
 - [`enableLayoutTesting`-service](https://webdriver.io/docs/visual-testing/service-options#enablelayouttesting) option, which makes all text on a page transparent, including font-based icons.
 - [`enableLayoutTesting`-method](https://webdriver.io/docs/visual-testing/method-options#enablelayouttesting) option, applying transparency only to text in specific methods.
 
-Experiment with these options and rerun your tests:  `npm run wdio -- --spec="test/specs/desktop.spec.ts"`.
+Experiment with these options and rerun your tests: `npm run wdio -- --spec="test/specs/desktop.spec.ts"`.
 
 ## Extra 1: Storybook Testing
+
 Now, we will combine WebdriverIO and the Visual Testing Module with both locally and externally hosted Storybook instances.
 
 > [!TIP]
@@ -187,14 +193,14 @@ info Using tsconfig paths for react-docgen
 
 </details>
 
-
 3. After successful installation, Storybook will automatically open in your browser. You will see several components (Button/Header/Page).
 4. Start Storybook Visual Testing with `npx wdio ./wdio.conf.ts --storybook`. This creates `.tmp` and `__snapshots__` folders, both at the root of the project, with relevant images.
 5. The images have automatically been clipped to the "estimated" size of the component. If you want you can also:
-    - select the [browsers](https://github.com/webdriverio/visual-testing/tree/main?tab=readme-ov-file#--browsers) by adding `--browsers=chrome,firefox`
-    - select an [emulated device mode](https://github.com/webdriverio/visual-testing/tree/main?tab=readme-ov-file#--devices) by for example providing for example `--devices="iPhone 14 Pro Max","Pixel 3 XL"` to the command.
+   - select the [browsers](https://github.com/webdriverio/visual-testing/tree/main?tab=readme-ov-file#--browsers) by adding `--browsers=chrome,firefox`
+   - select an [emulated device mode](https://github.com/webdriverio/visual-testing/tree/main?tab=readme-ov-file#--devices) by for example providing for example `--devices="iPhone 14 Pro Max","Pixel 3 XL"` to the command.
 
 > [!TIP]
+>
 > - If you want to see what is happening then provide `--headless=false` to the command line so the test will run in "normal" mode
 > - By default snapshots will be clipped. By providing `--clip=false` as an extra argument the "full"-screen snapshot will be taken. This can come in handy when using the `--devices` argument
 
@@ -221,34 +227,37 @@ Finally, let's apply the Visual Testing service to Mobile Native apps.
 1. Follow the instructions to install [`appium-installer`](https://github.com/AppiumTestDistribution/appium-installer)
 2. Open a new terminal and execute `appium-installer`, following the necessary steps.
 
-    - *Need help setting up Android Environment to run your Appium test?*
-    - *Install Appium Server*
-    - *Install Appium Drivers*
-    - *Run Appium Doctor*
+   - _Need help setting up Android Environment to run your Appium test?_
+   - _Install Appium Server_
+   - _Install Appium Drivers_
+   - _Run Appium Doctor_
 
 3. Start Appium with `appium server --log-timestamp --relaxed-security`. Keep this terminal open.
 4. Create an `apps` folder at your project's root and download the required Android or iOS app from [here](https://github.com/webdriverio/native-demo-app/releases).
 5. Create a file named `wdio.android.emulator.conf.ts` in the root of your project with the following contents:
 
 ```ts
-import type { Options } from '@wdio/types'
-import {join} from 'node:path';
-import {config as sharedConfig} from './wdio.conf.js';
+import type { Options } from "@wdio/types";
+import { join } from "node:path";
+import { config as sharedConfig } from "./wdio.conf.js";
 
 export const config: Options.Testrunner = {
   ...sharedConfig,
   capabilities: [
     {
-      platformName: 'Android',
-      'appium:automationName': 'UIAutomator2',
+      platformName: "Android",
+      "appium:automationName": "UIAutomator2",
       // Change this to the name of your emulator
-      'appium:deviceName': 'Pixel_7_Pro_Android_14_API_34',
+      "appium:deviceName": "Pixel_7_Pro_Android_14_API_34",
       // Change this to the version of your emulator
-      'appium:platformVersion': '14.0',
+      "appium:platformVersion": "14.0",
       // Change this to the path/name of your app
-      'appium:app': join(process.cwd(), './apps/android.wdio.native.app.v1.0.8.apk'),
-      'appium:newCommandTimeout': 240,
-    }
+      "appium:app": join(
+        process.cwd(),
+        "./apps/android.wdio.native.app.v1.0.8.apk"
+      ),
+      "appium:newCommandTimeout": 240,
+    },
   ],
   port: 4723,
 };
@@ -257,37 +266,41 @@ export const config: Options.Testrunner = {
 6. Create a test script `mobile.app.spec.ts` in the `test/specs` folder with the following content:
 
 ```ts
-import {$, browser, expect} from '@wdio/globals'
+import { $, browser, expect } from "@wdio/globals";
 
-describe('Mobile Application', () => {
+describe("Mobile Application", () => {
   beforeEach(async () => {
-    await relaunchApp()
-    await $('~Home-screen').waitForDisplayed()
-    await $('~Login').click()
-    await $('~button-LOGIN').waitForDisplayed()
-  })
+    await relaunchApp();
+    await $("~Home-screen").waitForDisplayed();
+    await $("~Login").click();
+    await $("~button-LOGIN").waitForDisplayed();
+  });
 
-  it('should be able to create an element snapshot', async () => {
-    await expect($('~button-LOGIN')).toMatchElementSnapshot('login-button')
-  })
+  it("should be able to create an element snapshot", async () => {
+    await expect($("~button-LOGIN")).toMatchElementSnapshot("login-button");
+  });
 
-  it('should be able to create a device snapshot', async () => {
-    await expect(browser).toMatchScreenSnapshot('app-forms')
-  })
-})
+  it("should be able to create a device snapshot", async () => {
+    await expect(browser).toMatchScreenSnapshot("app-forms");
+  });
+});
 
 /**
  * Simple function to relaunch the app
  */
 async function relaunchApp() {
-  const PACKAGE_NAME = 'com.wdiodemoapp'
-  const BUNDLE_ID = 'org.reactjs.native.example.wdiodemoapp'
-  const appIdentifier = browser.isAndroid ? { 'appId': PACKAGE_NAME } : { 'bundleId': BUNDLE_ID }
-  const terminateCommand = 'mobile: terminateApp'
-  const launchCommand = `mobile: ${driver.isAndroid ? 'activateApp' : 'launchApp'}`
+  const PACKAGE_NAME = "com.wdiodemoapp";
+  const BUNDLE_ID = "org.reactjs.native.example.wdiodemoapp";
+  const appIdentifier = browser.isAndroid
+    ? { appId: PACKAGE_NAME }
+    : { bundleId: BUNDLE_ID };
+  const terminateCommand = "mobile: terminateApp";
+  const launchCommand = `mobile: ${
+    driver.isAndroid ? "activateApp" : "launchApp"
+  }`;
 
-  await browser.execute(terminateCommand, appIdentifier)
-  await browser.execute(launchCommand, appIdentifier)
+  await browser.execute(terminateCommand, appIdentifier);
+  await browser.execute(launchCommand, appIdentifier);
 }
 ```
 
