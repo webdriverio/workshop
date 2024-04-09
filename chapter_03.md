@@ -99,7 +99,7 @@ Select `Y` and the project will be created and dependencies will be installed.
 After all these questions your config file is created. Next try to solve the objectives mention at the top of this file. If you port the `test.js` code to an actual test, make sure you follow the [Mocha](https://mochajs.org/) conventions of writing test files. Simple setup would like this:
 
 ```js
-describe("My Vue.js Example Application", async () => {
+describe("My Vue.js Example Application", () => {
   it("should be able to complete ToDos", async () => {
     // add your automation code here
     // ...
@@ -110,7 +110,7 @@ describe("My Vue.js Example Application", async () => {
 To automate the browser through the [browser object](https://webdriver.io/docs/api/browser) you can either import it via:
 
 ```ts
-import { browser } from '@wdio/globals'
+import { browser } from "@wdio/globals";
 ```
 
 or use `browser` directly as variable since it is available in the global scope.
