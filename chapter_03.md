@@ -111,7 +111,7 @@ describe("My Vue.js Example Application", async () => {
 After you've ported/written the tests you can run it using the wdio testrunner by calling:
 
 ```sh
-$ npx wdio
+$ npx wdio ./wdio.conf.ts
 ```
 
 > [!NOTE]
