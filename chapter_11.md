@@ -13,9 +13,11 @@ The objectives for this chapter are:
 
 - get familiar with the WebdriverIO docs on [Component Testing](https://webdriver.io/docs/component-testing)
 - import a Todo Application written in the framework of choice from the [TodoMVC](https://github.com/tastejs/todomvc/tree/master/examples) project
-  > [!NOTE]
-  > Currently WebdriverIO supports component testing using the following frameworks:
-  > React, Preact, Nuxt, Svelte, Vue, Solid, Lit or Stencil
+
+> [!NOTE]
+> Currently WebdriverIO supports component testing using the following frameworks:
+> React, Preact, Nuxt, Svelte, Vue, Solid, Lit or Stencil
+
 - create a new WebdriverIO configuration called `wdio.unit.conf.ts` that we use for component testing
   - define Chrome as capability
   - set `runner: 'browser'` to make WebdriverIO execute the test in the browser
