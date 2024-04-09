@@ -7,10 +7,8 @@ This little course will help you to get up and running with WebdriverIO v7. It w
 
 In order to go through the course the following software is required to be installed on your system:
 
-- Node.js (v16 or higher)
-- NPM (v8 or higher)
+- Node.js (v18 or higher, recommended is v20)
 - An updated browser (e.g. Chrome, Firefox etc.)
-- A GitHub account (register [here](https://github.com/join), if you haven't)
 
 If you don't have this installed go to [Chapter 1](./chapter_01.md) where we walk through all install steps.
 
