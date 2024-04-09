@@ -26,8 +26,8 @@ If you don't have this installed go to [Chapter 1](./chapter_01.md) where we wal
 1. [Cloud Integration](./chapter_08.md)
 1. [Page Objects](./chapter_09.md)
 1. [Visual Regression Testing](./chapter_10.md)
-1. [Component Testing]('./chapter_11.md')
-1. [WebDriver Bidi]('./chapter_12.md')
+1. [Component Testing](./chapter_11.md)
+1. [WebDriver Bidi](./chapter_12.md)
 1. [Go Pro](./chapter_13.md)
 
 ## Disclaimer
