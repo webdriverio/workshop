@@ -6,7 +6,7 @@ const browser = await remote({
   }
 })
 
-await browser.url('http://todomvc.com/examples/vue/dist/')
+await browser.url('https://vue-todomvc.webdriver.io/')
 
 try {
   const newTodoInput = await browser.$('.new-todo')

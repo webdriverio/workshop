@@ -5,46 +5,30 @@ import { remote } from 'webdriverio'
  * not supporting the local storage approach to pre-populate the ToDos.
  */
 
-const appUrl = 'https://todomvc.com/examples/vue/dist/'
-const values = [{
-  id: 1,
-  title: 'Foo',
-  completed: false
-}, {
-  id: 2,
-  title: 'Bar',
-  completed: false
-}, {
-  id: 3,
-  title: 'Loo',
-  completed: false
-}]
-
 const browser = await remote({
   capabilities: {
     browserName: 'chrome'
   }
 })
 
-const setDomainLocalStorage = async () => {
-  const puppeteerBrowser = await browser.getPuppeteer()
-  const page = await puppeteerBrowser.newPage()
-  await page.setRequestInterception(true)
-  page.on('request', r => r.respond({
-    status: 200,
-    contentType: 'text/plain',
-    body: 'tweak me.',
-  }))
-  await page.goto(appUrl)
-  await page.evaluate(values => {
-    localStorage.setItem('todos-vuejs', JSON.stringify(values))
-  }, values)
-  await page.close()
-}
-
 try {
-  await setDomainLocalStorage()
-  await browser.url(appUrl)
+  await browser.url('https://vue-todomvc.webdriver.io/', {
+    onBeforeLoad: async () => {
+      localStorage.setItem('vue-todomvc', JSON.stringify([{
+        id: 1,
+        title: 'Foo',
+        completed: false
+      }, {
+        id: 2,
+        title: 'Bar',
+        completed: false
+      }, {
+        id: 3,
+        title: 'Loo',
+        completed: false
+      }]))
+    }
+  })
 
   await browser.waitUntil(async () => {
     return (await browser.$$('.todo-list li')).length > 0

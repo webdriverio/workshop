@@ -9,6 +9,6 @@
     "test": "node test.js"
   },
   "devDependencies": {
-    "webdriverio": "^8.32.4"
+    "webdriverio": "^9.12.0"
   }
 }
