@@ -1,8 +1,4 @@
-export const config: WebdriverIO.Config = {
-  /**
-   * will be overwritten
-   */
-  capabilities: {},
+export const config: Omit<WebdriverIO.Config, 'capabilities'> = {
   //
   // ==================
   // Specify Test Files

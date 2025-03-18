@@ -4,7 +4,7 @@ export const config: WebdriverIO.Config = {
   ...sharedConfig,
 
   capabilities: [{
-    maxInstances: 5,
+    'wdio:maxInstances': 5,
     browserName: 'chrome'
   }],
 
