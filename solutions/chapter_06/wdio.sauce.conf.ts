@@ -8,7 +8,7 @@ export const config: WebdriverIO.Config = {
   ...sharedConfig,
   services: [],
   specs: [
-    path.resolve(__dirname, '/test/specs/extra.js')
+    path.resolve(__dirname, 'test', 'extra.ts')
   ],
   user: process.env.SAUCE_USERNAME,
   key: process.env.SAUCE_ACCESS_KEY,
