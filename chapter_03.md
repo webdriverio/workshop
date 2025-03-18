@@ -118,7 +118,7 @@ or use `browser` directly as variable since it is available in the global scope.
 After you've ported/written the tests you can run it using the wdio testrunner by calling:
 
 ```sh
-$ npx wdio ./wdio.conf.ts
+$ npx wdio run ./wdio.conf.ts
 ```
 
 > [!NOTE]
