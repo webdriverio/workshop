@@ -1,8 +1,7 @@
-import type { Options } from '@wdio/types'
 import {join} from 'node:path';
 import {config as sharedConfig} from './wdio.conf.js';
 
-export const config: Options.Testrunner = {
+export const config: WebdriverIO.Config = {
   ...sharedConfig,
   capabilities: [
     {

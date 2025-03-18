@@ -11,13 +11,18 @@ With this new project, we'll delve into the capabilities of the WebdriverIO test
 
 Our objectives for Visual Testing include:
 
-- [Setup a clean project](#setup-a-clean-project)
-- Creating Desktop Web Tests:
-  - [Element/viewport/full-page snapshot tests](#desktop-web-tests)
-  - [Use Layout testing](#desktop-web-layout-testing)
-- Time permitting:
-  - [Creating storybook snapshots](#extra-1-storybook-testing)
-  - [Creating native mobile app element/viewport snapshots](#extra-2-mobile-native-app)
+- [Visual Regression Testing](#visual-regression-testing)
+  - [Setup a Clean Project](#setup-a-clean-project)
+  - [Desktop Web Tests](#desktop-web-tests)
+      - [Check the output](#check-the-output)
+  - [Desktop Web Layout testing](#desktop-web-layout-testing)
+  - [Extra 1: Storybook Testing](#extra-1-storybook-testing)
+      - [Local hosted Storybook instance](#local-hosted-storybook-instance)
+      - [External hosted Storybook instance](#external-hosted-storybook-instance)
+  - [Extra 2: Mobile Native App](#extra-2-mobile-native-app)
+    - [Setup](#setup)
+      - [Run the Mobile Snapshot test](#run-the-mobile-snapshot-test)
+  - [Conclusion](#conclusion)
 
 We will guide you through setting up a clean project in the #setup section.
 
@@ -237,11 +242,10 @@ Finally, let's apply the Visual Testing service to Mobile Native apps.
 5. Create a file named `wdio.android.emulator.conf.ts` in the root of your project with the following contents:
 
 ```ts
-import type { Options } from "@wdio/types";
 import { join } from "node:path";
 import { config as sharedConfig } from "./wdio.conf.js";
 
-export const config: Options.Testrunner = {
+export const config: WebdriverIO.Config = {
   ...sharedConfig,
   capabilities: [
     {
