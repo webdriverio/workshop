@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "test": "wdio run wdio.conf.ts",
-    "test:sauce": "wdio wdio.sauce.conf.ts"
+    "test:sauce": "wdio run wdio.sauce.conf.ts"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^9.11.0",

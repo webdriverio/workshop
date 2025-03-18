@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "wdio wdio.local.conf.ts"
+    "test": "wdio run wdio.local.conf.ts"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.34.0",

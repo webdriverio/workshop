@@ -6,8 +6,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test:unit": "wdio wdio.unit.conf.ts",
-    "test:e2e": "wdio wdio.local.conf.ts"
+    "test:unit": "wdio run wdio.unit.conf.ts",
+    "test:e2e": "wdio run wdio.local.conf.ts"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.34.0",
