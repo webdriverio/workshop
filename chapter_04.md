@@ -1,6 +1,6 @@
 # Use of Reporter and Services
 
-Congratulation for successfully creating your first WebdriverIO test suite. Now as we move forward we want to make use of the diverse WebdriverIO ecosystem and add some more reporters and services to our test suite. The objectives are:
+Congratulations for successfully creating your first WebdriverIO test suite. As we move forward we want to make use of the diverse WebdriverIO ecosystem and add some more reporters and services to our test suite. The objectives are:
 
 1. Add the [Allure](http://allure.qatools.ru/) reporter to the list of reporters
 2. Use the Allure CLI to generate the Allure report in the `onComplete` hook

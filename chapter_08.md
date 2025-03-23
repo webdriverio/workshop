@@ -1,19 +1,13 @@
 Cloud Integration
 =================
 
-Now as we have a pretty decent functional test suite, let's scale this up and run everything on the cloud using more capabilities to ensure that our example applications works cross functional. You can pick between the cloud vendor of your choice.
+Let's scale this up and run everything on the cloud using more capabilities to ensure that our example applications works cross functional. You can pick between the cloud vendor of your choice.
 
-# [Perfecto](https://www.perfecto.io/)
+<details>
 
-The objectives are:
+<summary>Sauce Labs</summary>
 
-1. Export Perfecto credentials as environment variables
-2. Create a separate config file to run tests locally or in Perfecto
-3. Modify your NPM scripts to be able to run tests locally or in Perfecto
-5. Add 3 more browser capabilities to run your tests
-6. Make sure all your tests run in the same build
-
-# [Sauce Labs](https://saucelabs.com/)
+#### [Sauce Labs](https://saucelabs.com/)
 
 The objectives are:
 
@@ -34,3 +28,21 @@ As best practice we recommend to create different config files for every environ
 With the [`@wdio/sauce-service`](https://www.npmjs.com/package/@wdio/sauce-service) WebdriverIO provides a simple plugin that improves the integration with Sauce. Among other things it updates the job status for you and gives the job a name based on the test file.
 
 __Note:__ In order to find the correct capabilities for your environment, Sauce Labs has a handy [platform configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator) that allows you to click together your environment.
+
+</details>
+
+<details>
+
+<summary>Perfecto</summary>
+
+#### [Perfecto](https://www.perfecto.io/)
+
+The objectives are:
+
+1. Export Perfecto credentials as environment variables
+2. Create a separate config file to run tests locally or in Perfecto
+3. Modify your NPM scripts to be able to run tests locally or in Perfecto
+5. Add 3 more browser capabilities to run your tests
+6. Make sure all your tests run in the same build
+
+</details>
