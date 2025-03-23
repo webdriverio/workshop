@@ -9,7 +9,7 @@ After we have set up everything to automate a browser on our machine, let's writ
 4. Mark the second item as completed
 5. Print out the amount of items left
 
-Open your IDE open the project you just created in [Chapter 1](./chapter1.md) and create file that we call `test.js`. Next step is to init an NPM project so that we can store the dependency that we need to the length of the course:
+Open your IDE and open the project you just created in [Chapter 1](./chapter1.md) and create file that we call `test.js`. Next step is to init an NPM project so that we can store the dependency that we need to the length of the course:
 
 ```sh
 $ npm init -y
