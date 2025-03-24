@@ -9,13 +9,7 @@ After we have set up everything to automate a browser on our machine, let's writ
 4. Mark the second item as completed
 5. Print out the amount of items left
 
-In order to get started navigate into the project directory you have created in [Chapter 1](./chapter1.md):
-
-```sh
-$ cd ~/webdriverio-hands-on
-```
-
-Then open your IDE and create file that we call `test.js`. Next step is to init an NPM project so that we can store the dependency that we need to the length of the course:
+Open your IDE and open the project you just created in [Chapter 1](./chapter1.md) and create file that we call `test.js`. Next step is to init an NPM project so that we can store the dependency that we need to the length of the course:
 
 ```sh
 $ npm init -y
@@ -24,10 +18,10 @@ $ npm init -y
 Next, install the WebdriverIO NPM [package](https://www.npmjs.com/package/webdriverio):
 
 ```sh
-npm install --save-dev webdriverio
+npm i -D webdriverio
 ```
 
-In your `test.js` file start writing the basic setup. I recommend to leverage the `async/await` functionality of Node.js that allows you to handle async operations in Node. Since every command is an asynchronous HTTP request to the browser driver, we have to make sure that we handle these async operations properly. You can use the following basic setup:
+In your `test.js` file start writing the basic setup. Since every command is an asynchronous HTTP request to the browser driver, we have to make sure that we handle these async operations properly, luckily Node's `async/await` feature allows you to handle async operations in an easy way. You can use the following basic setup:
 
 ```js
 import { remote } from 'webdriverio'
@@ -57,7 +51,7 @@ You should be able to run the script now by calling:
 $ node test.js
 ```
 
-This script now should open and close the browser again. You can now work on the assignment to create an automation script that does the steps outlined at the top of this chapter. You find all commands that are available in WebdriverIO in the [API docs](https://webdriver.io/docs/api.html).
+This script should open and then close the browser. You can work on the assignment to create an automation script that executes the steps outlined at the top of this chapter. You find all commands that are available in WebdriverIO in the [API docs](https://webdriver.io/docs/api.html).
 
 ## Extra #1
 
@@ -67,7 +61,7 @@ To speed up the test with our current example try to send all 3 Todo items with 
 
 ## Extra #2
 
-Instead of inserting ToDo List items we can manipulate the application state by changing e.g. the local storage before the application is rendered. This can be done through the `onBeforeLoad` option of the `url` command which injects a script to pre-populate the local storage with items so that if you open the page it should have already have 3 ToDos stored. The local storage key for these items is `vue-todomvc` and should contain a list like:
+Instead of inserting ToDo list items, we can manipulate the application state by changing the local storage before the application is rendered. This can be done through the `onBeforeLoad` option of the `url` command which injects a script to pre-populate the local storage with items so that if you open the page it should have already have 3 ToDo items stored. The local storage key for these items is `vue-todomvc` and should contain a list like:
 
 ```json
 [{

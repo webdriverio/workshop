@@ -24,7 +24,7 @@ Our objectives for Visual Testing include:
       - [Run the Mobile Snapshot test](#run-the-mobile-snapshot-test)
   - [Conclusion](#conclusion)
 
-We will guide you through setting up a clean project in the #setup section.
+We will guide you through setting up a clean project in the [setup](#setup) section.
 
 ## Setup a Clean Project
 
@@ -140,11 +140,11 @@ Now, we will combine WebdriverIO and the Visual Testing Module with both locally
 
 ```logs
 Need to install the following packages:
-storybook@8.0.5
+storybook@8.6.8
 Ok to proceed? (y) y
 ╭──────────────────────────────────────────────────────╮
 │                                                      │
-│   Adding Storybook version 8.0.5 to your project..   │
+│   Adding Storybook version 8.6.8 to your project..   │
 │                                                      │
 ╰──────────────────────────────────────────────────────╯
  • Detecting project type. ✓
@@ -187,7 +187,7 @@ Running Storybook
 > storybook
 > storybook dev -p 6006 --quiet
 
-@storybook/cli v8.0.5
+@storybook/cli v8.6.8
 
 info => Starting manager..
 info => Starting preview..
