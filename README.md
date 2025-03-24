@@ -8,20 +8,12 @@ This course will help you to get up and running with WebdriverIO. It will walk y
 In order to go through the course the following software is required to be installed on your system:
 
 - Node.js (v18.19 or higher, recommended is v22 as it is the current LTS)
-- An updated browser (e.g. Chrome, Firefox etc.)
 
 ## Install Node.JS
 
 The project is build on top of Node.js which is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/). It can be installed on all major OS systems such as Windows, Mac or Linux. In order to get it, open [Node.js](https://nodejs.org/en) download the installer.
 
 This will also install NPM for you which is the package manager for Node.js. NPM is required to download the WebdriverIO package.
-
-## Install a browser
-
-If you don't have a browser installed yet, please download and install one.
-
-- [Chrome](https://www.google.com/intl/nl/chrome/)
-- [Firefox](https://www.mozilla.org/nl/firefox/new/)
 
 ## Chapters
 
