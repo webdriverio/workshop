@@ -21,11 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - name: Test chapter 03
-        run: |
-          echo "Hello World!"
-          npm install
-          npm test
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./chapter03
+      - name: Test Chapter
+        run: npm test
         working-directory: ./chapter03
 
   deploy:
