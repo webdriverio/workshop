@@ -15,25 +15,6 @@ WebdriverIO allows you to test the performance of your frontend application usin
 - add an assertion for the `speedIndex` metric
 - modify the test so we can run it locally as well as on Sauce Labs
 
-### Extra #1
-
-Capturing the performance of a browser requires access to native browser APIs. Currently only Chrome allows for such introspection. As browser APIs aren't supported yet by cloud vendors such as Sauce Labs we need to workaround this problem by using [Sauce Labs WebDriver extension](https://wiki.saucelabs.com/display/DOCS/Measure+Page+Load+Performance+Using+Test+Automation) that enable performance testing in the cloud.
-
-- create a second config file for running tests on Sauce Labs
-- update your performance test file to allow run in local and cloud environment, have the file look as following:
-  ```js
-  const runLocal = browser.isSauce ? describe.skip : describe
-  const runSauce = browser.isSauce ? describe : describe.skip
-
-  runLocal('My Example App (tested locally)', () => {
-    // ... your local test code
-  })
-
-  runSauce('My Example App (tested in the cloud)', () => {
-    // ... the same code using Sauce Labs performance API
-  })
-  ```
-
 ## PWA Testing
 
 A progressive web application is a type of application software delivered through the web, built using common web technologies including HTML, CSS and JavaScript. It is intended to work on any platform that uses a standards-compliant browser, including both desktop and mobile devices<sup>[[1](https://en.wikipedia.org/wiki/Progressive_web_application)]</sup>.
