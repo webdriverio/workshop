@@ -7,7 +7,7 @@ We are going to set up everything to automate Chrome on our machine with the WDI
 In this chapter, we will port the Node.js automation script into a test suite that is using the testrunner. If you haven't written the script, then the objective for the script is as follows: write a Node.js script that does the following things:
 
 1. Open the Chrome browser
-2. Go to the following page: [http://todomvc.com/examples/vue/dist](http://todomvc.com/examples/vue/dist)
+2. Go to the following page: [https://vue-todomvc.webdriver.io/](https://vue-todomvc.webdriver.io/)
 3. Enter 3 items into the ToDo list
 4. Mark the second item as completed
 5. Print out the amount of items left

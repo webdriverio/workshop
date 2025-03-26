@@ -18,7 +18,7 @@ runLocal('My Example App (tested locally)', () => {
   })
 
   it('should open the page', async () => {
-    await browser.url('http://todomvc.com/examples/vue/dist/')
+    await browser.url('https://vue-todomvc.webdriver.io/')
   })
 
   it('should assert the performance', async () => {
@@ -39,7 +39,7 @@ runSauce('My Example App (tested in the cloud)', () => {
   })
 
   it('should open the page', async () => {
-    await browser.url('http://todomvc.com/examples/vue/dist/')
+    await browser.url('https://vue-todomvc.webdriver.io/')
   })
 
   it('should assert the performance', async () => {
