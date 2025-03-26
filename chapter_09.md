@@ -14,7 +14,7 @@ A full documentation on how page objects can be written with WebdriverIO can be 
 ```js
 const TodoApp = require('../pageobjects/main.page')
 
-describe('My Vue.js Example Application', () => {
+describe('My ToDo Application', () => {
   it('should be able to complete ToDos', () => {
     TodoApp.open()
     TodoApp.addTodo('ToDo #1')

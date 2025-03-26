@@ -1,6 +1,4 @@
-import { TodoApp } from '../pageobjects/main.page.js'
-
-describe('My Vue.js Example Application', () => {
+describe('My ToDo Application', () => {
   it('should be able to complete ToDos', async () => {
     await browser.url('https://vue-todomvc.webdriver.io/')
 

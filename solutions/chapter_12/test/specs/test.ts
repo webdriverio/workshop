@@ -1,6 +1,6 @@
 import { TodoApp } from '../pageobjects/main.page.js'
 
-describe('My Vue.js Example Application', () => {
+describe('My ToDo Application', () => {
   it('should be able to complete ToDos', async () => {
     await TodoApp.open()
     await TodoApp.addTodo('ToDo #1')

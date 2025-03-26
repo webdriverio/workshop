@@ -1,6 +1,6 @@
 import { browser, expect } from '@wdio/globals'
 
-describe('My Vue.js Example Application', () => {
+describe('My ToDo Application', () => {
   /**
    * setup testing environment
    */

@@ -1,6 +1,6 @@
 import { browser, $, $$, expect } from '@wdio/globals'
 
-describe('My Vue.js Example Application', () => {
+describe('My ToDo Application', () => {
   it('should be able to complete ToDos', async () => {
     await browser.url('https://vue-todomvc.webdriver.io/')
 

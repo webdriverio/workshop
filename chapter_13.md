@@ -37,7 +37,7 @@ Implement the service in the following order:
 If you think you have successfully implemented the service, the following WebdriverIO test should pass:
 
 ```ts
-describe('My Vue.js Example Application', () => {
+describe('My ToDo Application', () => {
   it('should be able to complete ToDos', async () => {
     await browser.url('https://vue-todomvc.webdriver.io/')
 
