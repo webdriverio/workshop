@@ -35,8 +35,6 @@ const browser = await remote({
 try {
   // add your automation code here
   // ...
-
-  await browser.deleteSession()
 } catch (e) {
   console.error(e)
 } finally {
