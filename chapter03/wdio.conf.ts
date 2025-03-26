@@ -52,14 +52,23 @@ export const config: WebdriverIO.Config = {
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [{
-    browserName: 'chrome'
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+      args: ['--headless']
+    }
   }, {
-    browserName: 'firefox'
+    browserName: 'firefox',
+    'moz:firefoxOptions': {
+      args: ['--headless']
+    }
   }, {
-    browserName: 'edge'
-  }, {
-    browserName: 'safari',
-    'wdio:maxInstances': 1
+    browserName: 'edge',
+    'ms:edgeOptions': {
+      args: ['--headless']
+    }
+  // }, {
+  //   browserName: 'safari',
+  //   'wdio:maxInstances': 1
   }],
   //
   // ===================
