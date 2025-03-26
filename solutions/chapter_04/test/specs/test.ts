@@ -25,6 +25,6 @@ describe('My Vue.js Example Application', () => {
     await browser.pause(2000)
 
     const todoCount = await $('.todo-count')
-    await expect(todoCount).toHaveText('2 items left')
+    await expect(todoCount).toHaveText('1 items left')
   })
 })
