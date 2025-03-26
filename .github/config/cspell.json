@@ -21,6 +21,7 @@
     "configurator",
     "wdiodemoapp",
     "UIAutomator2",
-    "pageobjects"
+    "pageobjects",
+    "todomvc"
   ]
 }
