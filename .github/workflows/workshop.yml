@@ -1,0 +1,35 @@
+name: My Workshop Pipeline
+
+on:
+  push:
+    branches: ['**', '!main', '!master']
+      # - '**'
+      # - '!main'
+      # - '!master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: echo "I build myself"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - name: Test chapter 03
+        run: |
+          echo "Hello World!"
+          npm install
+          npm test
+        working-directory: ./chapter03
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I deploy myself"

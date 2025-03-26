@@ -1,0 +1,13 @@
+{
+  "name": "chapter03",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/local-runner": "^9.12.1",
+    "@wdio/mocha-framework": "^9.12.1",
+    "@wdio/spec-reporter": "^9.11.0",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.ts"
+  }
+}
