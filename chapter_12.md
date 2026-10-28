@@ -18,7 +18,7 @@ The objective of this chapter are the following:
 1. Let the test fail if you discover an error being thrown during page load
 
 > [!NOTE]
-> JavaScript errors are often raised after the page load, when the application starts to render. Therefor you probably won't have any log entries right after you call the `url` command. For simplicity let's use `await browser.pause(1000)` to delay the test execution and make sure that our events come through.
+> JavaScript errors are often raised after the page load, when the application starts to render. Therefore you probably won't have any log entries right after you call the `url` command. For simplicity let's use `await browser.pause(1000)` to delay the test execution and make sure that our events come through.
 
 ## Capture Network Events
 
@@ -33,4 +33,4 @@ The objective of this chapter are the following:
 1. Let the test fail if the request contained any failing requests
 
 > [!NOTE]
-> Requests to application assets are often made after the page load, when the application starts to render. Therefor you probably won't have any request entries logged right after you call the `url` command. For simplicity let's use `await browser.pause(1000)` to delay the test execution and make sure that our requests come through.
+> Requests to application assets are often made after the page load, when the application starts to render. Therefore you probably won't have any request entries logged right after you call the `url` command. For simplicity let's use `await browser.pause(1000)` to delay the test execution and make sure that our requests come through.

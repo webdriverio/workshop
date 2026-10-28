@@ -1,7 +1,10 @@
+import url from 'node:url'
 import path from 'node:path'
 import fs from 'node:fs/promises'
 
 import allure from 'allure-commandline'
+
+const __dirname = path.resolve(url.fileURLToPath(new URL('.', import.meta.url)))
 
 interface ServiceOptions {
   outputDir?: string
@@ -15,8 +18,8 @@ export default class AllureService {
   }
 
   async onPrepare () {
-    fs.rmdir(path.join(__dirname, '/allure-results'), { recursive: true })
-    fs.rmdir(this.outputDir, { recursive: true })
+    await fs.rm(path.join(__dirname, '/allure-results'), { recursive: true, force: true })
+    await fs.rm(this.outputDir, { recursive: true, force: true })
   }
 
   onComplete () {

@@ -9,7 +9,7 @@ After we have set up everything to automate a browser on our machine, let's writ
 4. Mark the second item as completed
 5. Print out the amount of items left
 
-Open your IDE and open the project you just created in [Chapter 1](./chapter1.md) and create file that we call `test.js`. Next step is to init an NPM project so that we can store the dependency that we need to the length of the course:
+Open your IDE and open the project you just created in [Chapter 1](./chapter_01.md) and create file that we call `test.js`. Next step is to init an NPM project so that we can store the dependency that we need to the length of the course:
 
 ```sh
 $ npm init -y
@@ -76,3 +76,15 @@ Instead of inserting ToDo list items, we can manipulate the application state by
   "completed": false
 }]
 ```
+
+## Extra #3
+
+In case your application is using a REST API you can also leverage WebdriverIO's [mock capabilities](https://webdriver.io/docs/api/browser/mock).
+
+__Task:__ modify your __Extra #2__ solution to use a TodoMVC app with a REST API backend, e.g. [https://www.todobackend.com/client/index.html?https://todo-backend-webapi.azurewebsites.net/todo](https://www.todobackend.com/client/index.html?https://todo-backend-webapi.azurewebsites.net/todo), and simplify your script to make use of the [`mock`](https://webdriver.io/docs/api/browser/mock) command.
+
+Note:
+- the app URL is now `https://www.todobackend.com/client/index.html?https://todo-backend-webapi.azurewebsites.net/todo`
+- the TodoBackend app uses a slightly outdated TodoMVC app: adjust your element selectors from `$$('.todo-list li')` to `$$('#todo-list li')` and `$('.todo-count')` to `$('#todo-count')`
+
+If everything is working you should see the app loading ToDos defined in your tests rather than accessing the API.

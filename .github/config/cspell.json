@@ -22,6 +22,7 @@
     "wdiodemoapp",
     "UIAutomator2",
     "pageobjects",
-    "todomvc"
+    "todomvc",
+    "TodoBackend"
   ]
 }

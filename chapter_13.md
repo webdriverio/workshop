@@ -1,7 +1,7 @@
 Go Pro
 ======
 
-There are a lot more things that you can add to your test suite using WebdriverIO. In this chapter we focus more on smaller items that we try out to get to know how it works. Therefor the objective is more to work with WebdriverIO to get to know its full potential.
+There are a lot more things that you can add to your test suite using WebdriverIO. In this chapter we focus more on smaller items that we try out to get to know how it works. Therefore the objective is more to work with WebdriverIO to get to know its full potential.
 
 ## Debugging
 

@@ -10,7 +10,7 @@ While it is important that an application is working functionally, there are a l
 WebdriverIO allows you to test the performance of your frontend application using its integration to [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) which is a popular tool for capturing important performance metrics. To enable these features you need to add a service extension called [`@wdio/lighthouse-service`](https://www.npmjs.com/package/@wdio/lighthouse-service). The objectives for this chapter are:
 
 - add `@wdio/lighthouse-service` to your setup
-- write a new test that captures and asserts the Google Lighthouse performance score of our [example application](http://todomvc.com/examples/vue/)
+- write a new test that captures and asserts the Google Lighthouse performance score of our [example application](https://vue-todomvc.webdriver.io/)
     - to emulate a real user experience for our test we mimic our browser to be an iPhone X with a good 3G connection
 - add an assertion for the `speedIndex` metric
 - modify the test so we can run it locally as well as on Sauce Labs

@@ -1,10 +1,5 @@
 import { remote } from 'webdriverio'
 
-/**
- * Note" This solution does not seem to work anymore. The application under test is
- * not supporting the local storage approach to pre-populate the ToDos.
- */
-
 const browser = await remote({
   capabilities: {
     browserName: 'chrome'
@@ -32,7 +27,10 @@ try {
 
   await browser.waitUntil(async () => {
     return (await browser.$$('.todo-list li')).length > 0
-  }, 3000, 'No items were propagated')
+  }, {
+    timeout: 3000,
+    timeoutMsg: 'No items were propagated'
+  })
 
   // to see that ToDo were created
   await browser.pause(2000)
